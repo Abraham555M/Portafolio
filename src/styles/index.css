@@ -3,3 +3,7 @@
 body {
   @apply bg-black;
 }
+
+html {
+  scroll-behavior: smooth;
+}
