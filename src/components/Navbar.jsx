@@ -14,32 +14,32 @@ export const Navbar = () => {
             <nav>
                 <ul className='flex gap-10 text-lg'>
                     <li>
-                        <a href="#Home" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
+                        <a href="#home" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="#SobreMi" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
+                        <a href="#sobre-mi" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
                             About
                         </a>
                     </li>
                     <li>
-                        <a href="#Proyectos" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
+                        <a href="#proyectos" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
                             Proyectos
                         </a>
                     </li>
                     <li>
-                        <a href="#Habilidades" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
+                        <a href="#habilidades" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
                             Habilidades
                         </a>
                     </li>
                     <li>
-                        <a href="#Experiencia" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
+                        <a href="#experiencia" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
                             Experiencia
                         </a>
                     </li>
                     <li>
-                        <a href="#Contacto" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
+                        <a href="#contacto" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
                             Contacto
                         </a>
                     </li>

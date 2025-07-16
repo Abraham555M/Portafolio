@@ -1,10 +1,72 @@
-import React from 'react'
+import fondo from '../../assets/fondo-inicio.png';
+import { Cog6ToothIcon } from '@heroicons/react/24/outline';
 
 export const Inicio = () => {
   return (
-    <section id="Home" className="text-white">
-        <h1 className="text-4xl">Inicio</h1>
-    
+    <section id="home" className="border text-white flex">
+      <div id='informacion' className='border-2 border-white w-200 h-170 p-20'>
+        
+        {/* Parte 1 */}
+        <div className='font-bold space-y-2'>
+          <h1 className='text-2xl'>HELLO I'M</h1>
+          <h2 className='text-5xl'>Abraham Manuel Hilario Fernández <br />
+          </h2>
+            <span>Desarrollador web Full Stack</span>
+        </div>
+
+        {/* Parte 2 */}
+        <div className='mt-10 space-y-2'>
+          <h1 className='text-2xl font-semibold underline text-green-600'>
+            abraham2004hf@gmail.com
+          </h1>
+          <p className='font-bold'>
+            Lima, Puente Piedra
+            <br />
+            Perú
+          </p>
+        </div>  
+        
+        {/* Parte 3 */}
+        <div className="mt-10 flex gap-6">
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/abraham-manuel-hilario-fern%C3%A1ndez-a04731282/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group p-3 rounded-full bg-white/10 hover:bg-blue-500 transition-all duration-300"
+          >
+            <svg
+              className="w-6 h-6 fill-white group-hover:fill-white transition-all duration-300"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4.98 3.5C3.34 3.5 2 4.84 2 6.48s1.34 2.98 2.98 2.98c1.65 0 2.98-1.34 2.98-2.98S6.63 3.5 4.98 3.5zM2.4 8.9h5.16V21H2.4V8.9zM9.6 8.9h4.92v1.64h.07c.69-1.3 2.37-2.66 4.88-2.66 5.22 0 6.18 3.43 6.18 7.89V21h-5.16v-6.9c0-1.65-.03-3.78-2.3-3.78-2.3 0-2.65 1.8-2.65 3.66V21H9.6V8.9z" />
+            </svg>
+          </a>
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/Manuelh2004"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group p-3 rounded-full bg-white/10 hover:bg-green-500 transition-all duration-300"
+          >
+            <svg
+              className="w-6 h-6 fill-white group-hover:fill-white transition-all duration-300"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 0a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.6v-2.2c-3.3.7-4-1.5-4-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.6.7 1.3 1.3.9.3 1.9.2 2.6-.1.1-.6.4-1.2.7-1.5-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.3-.1-.3-.6-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.9 1.2 2 1.2 3.3 0 4.7-2.8 5.6-5.4 5.9.4.4.7 1 .7 2v2.9c0 .4.2.7.8.6A12 12 0 0 0 12 0z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div className="flex items-center gap-3">
+        <Cog6ToothIcon
+                className="w-10 h-10 text-white"
+                style={{
+                  animation: 'spin 6s linear infinite' // más lento (4 segundos por giro)
+                }}
+              />        
+      </div>
     </section>
   )
 }
