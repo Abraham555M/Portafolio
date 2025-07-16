@@ -12,7 +12,7 @@ export const Navbar = () => {
         { /* Navbar */}
         <div>
             <nav>
-                <ul className='flex gap-10 text-base'>
+                <ul className='flex gap-10 text-lg'>
                     <li>
                         <a href="#Home" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
                             Home
