@@ -1,5 +1,6 @@
 import fondo from '../../assets/fondo-inicio.png';
-import { Cog6ToothIcon } from '@heroicons/react/24/outline';
+import { FaAndroid, FaReact, FaLaravel } from 'react-icons/fa';
+import { SiMysql } from 'react-icons/si'; // Ícono de MySQL desde Simple Icons
 
 export const Inicio = () => {
   return (
@@ -9,10 +10,11 @@ export const Inicio = () => {
       <div className=' border w-200 h-150 p-20'>        
         {/* Parte 1 */}
         <div className='space-y-2'>
-          <h1 className="font-bold text-2xl animate-fade-in-left [animation-delay:.1s]">HELLO I'M</h1>
+          <h1 className='font-bold text-2xl'>HELLO I'M</h1>
           <h2 className='font-bold text-5xl'>Abraham Manuel Hilario Fernández <br /></h2>
           <span className='font-semibold text-xl font-mono'>Full Stack Developer & Android Developer</span>
         </div>
+
         {/* Parte 2 */}
         <div className='mt-15 space-y-2 font-mono'>
           <h1 className='text-2xl font-semibold underline text-green-600'>
@@ -71,15 +73,16 @@ export const Inicio = () => {
         </div>
       </div>
 
-      {/* Sección de tuerca */}
-      <div className="border flex items-center gap-3 w-250">
-        <Cog6ToothIcon
-                className="w-50 h-50 text-white"
-                style={{
-                  animation: 'spin 6s linear infinite' // más lento (4 segundos por giro)
-                }}
-        />        
+      {/* Sección de Iconos */}
+      <div className="border border-amber-100 w-250 p-4">
+        <div className='flex items-center justify-between gap-6'>
+          <FaAndroid className="text-green-500 text-7xl transition-transform duration-300 hover:scale-125 cursor-pointer" />
+          <FaReact className="text-cyan-400 text-7xl transition-transform duration-300 hover:scale-125 cursor-pointer" />
+          <FaLaravel className="text-red-600 text-7xl transition-transform duration-300 hover:scale-125 cursor-pointer" />
+          <SiMysql className="text-7xl transition-transform duration-300 hover:scale-125 cursor-pointer" />
+        </div>
       </div>
+
     </section>
   )
 }

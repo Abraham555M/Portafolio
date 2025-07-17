@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
-      }      
+      },     
     },
   },
   plugins: [],
