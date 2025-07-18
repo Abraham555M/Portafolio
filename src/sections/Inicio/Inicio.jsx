@@ -5,34 +5,38 @@ import { motion } from "framer-motion";
 
 export const Inicio = () => {
   return (
-    <section id="home" className=" text-white flex" style={{
-    backgroundImage: `url(${fondo})`,
-  }}>
+    <section id="home" 
+        className=" text-white flex" 
+        /**
+        style={{
+          backgroundImage: `url(${fondo})`,
+        }}
+        */
+      >
       {/* Sección de informacion */}
-      <div className='w-200 h-150 p-20'>        
+      <div className="w-200 h-180 p-20 flex flex-col justify-center gap-7">
         {/* Parte 1 */}        
         <motion.div
-          className="space-y-2"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >          
           <h1 className='font-bold text-2xl'>HELLO I'M</h1>
-          <h2 className='font-bold text-5xl'>Abraham Manuel Hilario Fernández <br /></h2>
-          <span className='font-semibold text-xl font-mono'>Full Stack Developer & Android Developer</span>
+          <h2 className='mt-8 mb-2 font-bold text-5xl'>Abraham Manuel Hilario Fernández</h2>
+          <span className='font-semibold text-2xl font-mono'>Full Stack Developer & Android Developer</span>
         </motion.div>
 
         {/* Parte 2 */}
         <motion.div
-          className="mt-15 space-y-2 font-mono"
+          className="mt-15 font-mono"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h1 className="text-2xl font-semibold underline text-green-600">
+          <h1 className="text-3xl font-semibold underline text-green-600">
             abraham2004hf@gmail.com
           </h1>
-          <p className="font-semibold text-xl">
+          <p className="font-semibold text-2xl">
             Lima, Puente Piedra <br /> Perú
           </p>
         </motion.div>
