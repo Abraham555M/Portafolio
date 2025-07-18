@@ -1,18 +1,20 @@
-import fondo from '../../assets/fondo-inicio.png';
+import fondo from '../../assets/jjj.png';
 import { FaAndroid, FaReact, FaLaravel } from 'react-icons/fa';
 import { SiMysql } from 'react-icons/si'; // Ícono de MySQL desde Simple Icons
 import { motion } from "framer-motion";
 
 export const Inicio = () => {
   return (
-    <section id="home" className="border text-white flex">
+    <section id="home" className=" text-white flex" style={{
+    backgroundImage: `url(${fondo})`,
+  }}>
       {/* Sección de informacion */}
       <div className='w-200 h-150 p-20'>        
         {/* Parte 1 */}        
         <motion.div
           className="space-y-2"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >          
           <h1 className='font-bold text-2xl'>HELLO I'M</h1>
@@ -21,10 +23,10 @@ export const Inicio = () => {
         </motion.div>
 
         {/* Parte 2 */}
-         <motion.div
+        <motion.div
           className="mt-15 space-y-2 font-mono"
           initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <h1 className="text-2xl font-semibold underline text-green-600">
@@ -37,11 +39,11 @@ export const Inicio = () => {
 
         {/* Parte 3 */}
         <motion.div
-            className="mt-15 flex gap-4"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >          
+          className="mt-15 flex gap-4"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >          
           {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/abraham-manuel-hilario-fern%C3%A1ndez-a04731282/"
