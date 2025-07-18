@@ -42,7 +42,7 @@ export const SobreMi = () => {
           <h2 className="text-4xl font-bold text-green-600 flex items-center gap-3 font-poppins">
             <span>&lt;/&gt;</span> About Me
           </h2>
-            <p className='text-md mt-5 font-mono'>
+            <p className='text-lg mt-5 font-mono'>
               Desarrollador web apasionado por la tecnología y la innovación, especializado en Laravel y React. Cuento
               con experiencia en desarrollo frontend y backend, bases de datos SQL/NoSQL, despliegue en la nube y
               administración de servidores. Enfocado en crear aplicaciones escalables, seguras y optimizadas, aplicando
