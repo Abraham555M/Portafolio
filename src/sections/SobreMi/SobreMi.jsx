@@ -17,7 +17,7 @@ const softSkills = [
 export const SobreMi = () => {
 
    return (
-    <section id="sobre-mi" className="text-white my-10">
+    <section id="sobre-mi" className="text-white">
 
       {/* About me*/}
       <div className='flex p-20 gap-20 '>
@@ -50,7 +50,7 @@ export const SobreMi = () => {
               innovadores y seguir creciendo profesionalmente.
             </p>
           </motion.div>
-          <div className='flex gap-10 justify-center mt-8 text-sm'>
+          <div className='flex gap-10 justify-center mt-10 text-sm'>
             <div className="p-[2px] rounded-xl bg-gradient-to-r from-green-600 via-lime-400 to-yellow-400 hover:scale-105 transition-transform duration-300">
               <div className="bg-black rounded-xl">
                 <SyntaxHighlighter
