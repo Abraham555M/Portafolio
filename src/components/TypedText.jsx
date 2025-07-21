@@ -14,7 +14,10 @@ const TypedText = ({ text, speed = 100 }) => {
   }, [text, speed]);
 
   return (
-    <span className="font-semibold text-2xl font-mono whitespace-nowrap">
+    <span
+      className="font-semibold font-mono whitespace-nowrap 
+                 text-lg sm:text-xl md:text-2xl lg:text-3xl"
+    >
       {displayedText}
       <span className="custom-cursor">|</span>
     </span>

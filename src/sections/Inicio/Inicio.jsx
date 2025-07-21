@@ -5,11 +5,12 @@ import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { FaReact, FaLaravel, FaAndroid } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import TypedText from '../../components/TypedText';
+import { MdWavingHand } from "react-icons/md";
 
 export const Inicio = () => {
   return (
-    <section id="home" 
-        className=" text-white flex" 
+      <section id="home" className="text-white flex flex-col lg:flex-row"
+
         /*
         style={{
           backgroundImage: `url(${fondo})`,
@@ -17,22 +18,27 @@ export const Inicio = () => {
         */
       >
       {/* Sección de informacion */}
-      <div className="w-200 h-180 p-20 flex flex-col justify-center gap-7">
-       {/* Parte 1 */}        
+      <div className="w-full lg:w-[60%] p-10 lg:p-20 flex flex-col justify-center gap-7">
+      {/* Parte 1 */}        
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >          
-        <h1 className='font-bold text-2xl'>HELLO I'M</h1>
-        <h2 className='mt-5 mb-2 font-bold text-5xl'>Abraham Manuel Hilario Fernández</h2>
-        <TypedText text="Full Stack Developer & Android Developer" />
+      <h1 className="font-bold text-xl sm:text-2xl">HELLO I'M</h1>        
+      <h2 className="mt-5 mb-2 font-bold text-3xl sm:text-4xl lg:text-5xl">
+        <span>Abraham Manuel</span><br />
+        <span className="flex items-center mt-2">
+          Hilario Fernández
+          <MdWavingHand className="text-yellow-500 text-4xl ml-4 mt-2 rotate-360" />
+        </span>
+      </h2>
+      <TypedText text="Full Stack Developer & Android Developer" />
       </motion.div>
-
 
         {/* Parte 2 */}
         <motion.div
-          className="mt-15 font-mono mt-5"
+          className="font-mono mt-5"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -67,10 +73,7 @@ export const Inicio = () => {
       </div>
 
       {/* Sección de Iconos */}
-      <div className="w-200 flex gap-8 justify-center items-center p-10 border">
-
-
-        
+      <div className="w-full lg:w-[40%] flex flex-wrap justify-center items-center gap-6 p-6 border">
         {/* React */}
         <motion.div
           animate={{ y: [0, -20, 0] }}
