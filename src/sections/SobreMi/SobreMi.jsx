@@ -17,8 +17,7 @@ const softSkills = [
 export const SobreMi = () => {
 
    return (
-    <section id="sobre-mi" className="text-white">
-
+    <section id="sobre-mi" className="text-white border">
       {/* About me*/}
       <div className='flex p-20 gap-20 '>
         {/* Imagen */}
@@ -42,6 +41,9 @@ export const SobreMi = () => {
           <h2 className="text-4xl font-bold text-green-600 flex items-center gap-3 font-poppins">
             <span>&lt;/&gt;</span> About Me
           </h2>
+          <span>
+            discover my journey, passions, and the story behind my work
+          </span>
             <p className='text-lg mt-5 font-mono'>
               Desarrollador web apasionado por la tecnología y la innovación, especializado en Laravel y React. Cuento
               con experiencia en desarrollo frontend y backend, bases de datos SQL/NoSQL, despliegue en la nube y

@@ -6,11 +6,19 @@ import { FaReact, FaLaravel, FaAndroid } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import TypedText from '../../components/TypedText';
 import { MdWavingHand } from "react-icons/md";
-import { MdWork } from 'react-icons/md';
+import { MdWorkOutline } from "react-icons/md";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { FaLaptop } from "react-icons/fa";
+
+const stats = [
+  { id: 1, otherlabel: "+1 Year", label: "Experience", icon: <MdWorkOutline className="text-2xl mb-1" /> },
+  { id: 2, otherlabel: "Laravel", label: "Main Language", icon: <FaLaptop className="text-2xl mb-1" /> },
+  { id: 3, otherlabel: "3 Projects", label: "Total Projects", icon: <AiOutlineFundProjectionScreen className="text-2xl mb-1" /> },
+];
 
 export const Inicio = () => {
   return (
-      <section id="home" className="text-white flex flex-col lg:flex-row "
+      <section id="home" className="text-white flex flex-col lg:flex-row border"
         /*
         style={{
           backgroundImage: `url(${fondo})`,
@@ -18,60 +26,59 @@ export const Inicio = () => {
         */
       >
       {/* Sección de informacion */}
-      <div className="w-full lg:w-[60%] p-10 lg:p-20 flex flex-col justify-center gap-10">
-        {/* Parte 1 */}        
-        <motion.div
-          className=''
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >          
-        <h1 className="font-bold text-xl sm:text-2xl">HELLO I'M</h1>        
-        <h2 className="mt-5 mb-2 font-bold text-3xl sm:text-4xl lg:text-5xl">
-          <span>Abraham Manuel</span><br />
-          <span className="flex items-center mt-2">
-            Hilario Fernández
-            <MdWavingHand className="text-yellow-500 text-4xl ml-4 mt-2 rotate-360" />
-          </span>
-        </h2>
-        <TypedText text="Full Stack Developer & Android Developer" />
-        </motion.div>
+      <div className="w-full lg:w-[60%] p-10 lg:p-15 flex flex-col justify-center gap-10">
+      {/* Parte 1 */}        
+      <motion.div
+        className=''
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >          
+      <h1 className="font-bold text-xl sm:text-2xl">HELLO I'M</h1>        
+      <h2 className="mt-5 mb-2 font-bold text-3xl sm:text-4xl lg:text-5xl">
+        <span>Abraham Manuel</span><br />
+        <span className="flex items-center mt-2">
+          Hilario Fernández
+          <MdWavingHand className="text-yellow-500 text-4xl ml-4 mt-2 rotate-360" />
+        </span>
+      </h2>
+      <TypedText text="Full Stack Developer & Android Developer" />
+      </motion.div>
 
-        {/* Parte 2 */}
-        <div className=''>
-          <h2 className="text-xl font-bold text-white">
-            Quick Stats
-          </h2>
-          <div className='flex gap-5 mt-2'>
-          <div className="bg-white w-40 rounded-3xl p-3 text-black text-center font-semibold flex gap-2 transition-transform duration-300 hover:scale-105 cursor-pointer">
-              <MdWork className="text-black text-2xl" />
-              <p>+1 Experience</p>
-            </div>
-            <div className="bg-white w-40 rounded-3xl p-3 text-black text-center font-semibold flex gap-2 transition-transform duration-300 hover:scale-105 cursor-pointer">
-              <MdWork className="text-black text-2xl" />
-              <p>+1 Experience</p>
-            </div>
-            <div className="bg-white w-40 rounded-3xl p-3 text-black text-center font-semibold flex gap-2 transition-transform duration-300 hover:scale-105 cursor-pointer">
-              <MdWork className="text-black text-2xl" />
-              <p>+1 Experience</p>
-            </div>
-          </div>
+      {/* Parte 2 */}
+      <div>
+        <h2 className="text-lg font-bold text-white mb-2">Quick Stats</h2>
+        <div className="flex flex-wrap gap-4">
+          {stats.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.2 }}
+              className="bg-white w-30 rounded-2xl p-2 text-black font-medium flex flex-col items-center text-center shadow hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
+              {item.icon}
+              <p className="text-sm font-semibold">{item.otherlabel}</p>
+              <p className="text-xs text-gray-600">{item.label}</p>
+            </motion.div>
+          ))}
         </div>
+      </div>
 
-        {/* Parte 3 */}
-        <motion.div
-          className="font-mono "
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <h1 className="text-2xl font-semibold underline text-green-600">
-            abraham2004hf@gmail.com
-          </h1>
-          <p className="font-semibold text-xl">
-            Lima, Puente Piedra <br /> Peru
-          </p>
-        </motion.div>
+      {/* Parte 3 */}
+      <motion.div
+        className="font-mono "
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        <h1 className="text-2xl font-semibold underline text-green-600">
+          abraham2004hf@gmail.com
+        </h1>
+        <p className="font-semibold text-xl">
+          Lima, Puente Piedra <br /> Peru
+        </p>
+      </motion.div>
 
         {/* Parte 4 */}
         <motion.div
