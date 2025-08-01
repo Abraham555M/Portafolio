@@ -25,22 +25,22 @@ export const Navbar = () => {
                     </li>
                     <li>
                         <a href="#proyectos" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
-                            Proyectos
+                            Projects
                         </a>
                     </li>
                     <li>
                         <a href="#habilidades" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
-                            Habilidades
+                            Skills
                         </a>
                     </li>
                     <li>
                         <a href="#experiencia" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
-                            Experiencia
+                            Experience
                         </a>
                     </li>
                     <li>
                         <a href="#contacto" className="inline-block transform hover:scale-110 hover:text-green-500 transition-all duration-200">
-                            Contacto
+                            Contact
                         </a>
                     </li>
                 </ul>
@@ -54,7 +54,7 @@ export const Navbar = () => {
                 <path d="M3.5 12.75a.75.75 0 0 0-1.5 0v2.5A2.75 2.75 0 0 0 4.75 18h10.5A2.75 2.75 0 0 0 18 15.25v-2.5a.75.75 0 0 0-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5Z" />
             </svg>
             <button>                
-                Descargar CV
+                Download CV
             </button>
         </div>
 

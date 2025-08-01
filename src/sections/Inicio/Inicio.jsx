@@ -37,7 +37,7 @@ export const Inicio = () => {
       <h1 className="font-bold text-xl sm:text-2xl">HELLO I'M</h1>        
       <h2 className="mt-5 mb-2 font-bold text-3xl sm:text-4xl lg:text-5xl">
         <span>Abraham Manuel</span><br />
-        <span className="flex items-center mt-2">
+        <span className="flex items-center mt-2 ">
           Hilario Fernández
           <MdWavingHand className="text-yellow-500 text-4xl ml-4 mt-2 rotate-360" />
         </span>
@@ -47,7 +47,15 @@ export const Inicio = () => {
 
       {/* Parte 2 */}
       <div>
+        <motion.div
+        className=''
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        >         
         <h2 className="text-lg font-bold text-white mb-2">Quick Stats</h2>
+        </motion.div>
+
         <div className="flex flex-wrap gap-4">
           {stats.map((item, index) => (
             <motion.div
@@ -55,7 +63,7 @@ export const Inicio = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.2 }}
-              className="bg-white w-30 rounded-2xl p-2 text-black font-medium flex flex-col items-center text-center shadow hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="bg-gray-400 w-30 rounded-2xl p-2 text-black font-medium flex flex-col items-center text-center shadow hover:scale-105 transition-transform duration-300 cursor-pointer"
             >
               {item.icon}
               <p className="text-sm font-semibold">{item.otherlabel}</p>
@@ -72,7 +80,7 @@ export const Inicio = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <h1 className="text-2xl font-semibold underline text-green-600">
+        <h1 className="text-2xl font-semibold underline text-emerald-400">
           abraham2004hf@gmail.com
         </h1>
         <p className="font-semibold text-xl">
