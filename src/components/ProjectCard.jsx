@@ -4,6 +4,7 @@ import fondo from '../assets/jjj.png';
 
 const ProjectCard = ({ title, description, imageUrl, githubUrl, liveUrl, tools }) => {
   return (
+    
     <div className="relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-5 shadow-xl transition hover:shadow-cyan-500/30 hover:scale-[1.015] duration-300 group max-w-md">
       {/* Imagen de fondo */}
       <div className="w-full h-48 overflow-hidden rounded-xl mb-4">
@@ -57,6 +58,7 @@ const ProjectCard = ({ title, description, imageUrl, githubUrl, liveUrl, tools }
         )}
       </div>
     </div>
+      
   );
 };
 
