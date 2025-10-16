@@ -10,7 +10,7 @@ import foto from '../../assets/usuario.jpg';
 
 export const Inicio = () => {
   return (
-      <section id="home" className="flex flex-col text-white border lg:flex-row">
+      <section id="home" className="flex flex-col text-white lg:flex-row">
       {/* Sección de informacion */}
       <div className="w-full lg:w-[60%] p-10 lg:p-15 flex flex-col justify-center gap-10">
       {/* Parte 1 */}        
@@ -146,6 +146,19 @@ export const Inicio = () => {
             style={{ top: '15%', left: '5%', marginLeft: '-20px' }}
           >
             <FaAndroid className="text-2xl" />
+          </motion.div>
+
+          <motion.div
+            animate={{
+              x: [0, 20, -20, 0],
+              y: [-120, -140, -130, -120],
+            }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            whileHover={{ scale: 1.3 }}
+            className="absolute p-5 text-black bg-white rounded-full shadow-lg cursor-pointer"
+            style={{ top: '150%', left: '65%', marginLeft: '-40px' }}
+          >
+            <SiMysql className="text-2xl" />
           </motion.div>
         </div>
       </div>     

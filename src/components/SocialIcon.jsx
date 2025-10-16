@@ -8,11 +8,11 @@ export const SocialIcon = ({ href, children, color = "hover:bg-pink-500", size =
       target="_blank"
       rel="noopener noreferrer"
       className={clsx(
-        "group p-4 rounded-full bg-gray-400 transition-all duration-300",
+        "group p-4 rounded-full bg-gray-500 transition-all duration-300",
         color
       )}
     >
-      <div className={clsx(size, "text-black group-hover:text-white transition-all duration-300")}>
+      <div className={clsx(size, "text-white group-hover:text-white transition-all duration-300")}>
         {children}
       </div>
     </a>

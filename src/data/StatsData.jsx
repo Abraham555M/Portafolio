@@ -1,4 +1,3 @@
-// 📁 src/data/StatsData.js
 import { MdWorkOutline } from "react-icons/md";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { FaLaptop } from "react-icons/fa";
