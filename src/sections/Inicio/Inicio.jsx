@@ -1,30 +1,16 @@
 import fondo from '../../assets/jjj.png';
 import { motion } from "framer-motion";
 import { SocialIcon } from "../../components/SocialIcon"
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { FaReact, FaLaravel, FaAndroid } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaReact, FaLaravel, FaAndroid } from 'react-icons/fa';
 import { SiMysql } from "react-icons/si";
 import TypedText from '../../components/TypedText';
 import { MdWavingHand } from "react-icons/md";
-import { MdWorkOutline } from "react-icons/md";
-import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { FaLaptop } from "react-icons/fa";
-
-const stats = [
-  { id: 1, otherlabel: "+1 Year", label: "Experience", icon: <MdWorkOutline className="text-2xl mb-1" /> },
-  { id: 2, otherlabel: "Laravel", label: "Main Language", icon: <FaLaptop className="text-2xl mb-1" /> },
-  { id: 3, otherlabel: "3 Projects", label: "Total Projects", icon: <AiOutlineFundProjectionScreen className="text-2xl mb-1" /> },
-];
+import { stats } from "../../data/StatsData";
+import foto from '../../assets/usuario.jpg';
 
 export const Inicio = () => {
   return (
-      <section id="home" className="text-white flex flex-col lg:flex-row border"
-        /*
-        style={{
-          backgroundImage: `url(${fondo})`,
-        }}
-        */
-      >
+      <section id="home" className="flex flex-col text-white border lg:flex-row">
       {/* Sección de informacion */}
       <div className="w-full lg:w-[60%] p-10 lg:p-15 flex flex-col justify-center gap-10">
       {/* Parte 1 */}        
@@ -34,12 +20,12 @@ export const Inicio = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >          
-      <h1 className="font-bold text-xl sm:text-2xl">HELLO I'M</h1>        
-      <h2 className="mt-5 mb-2 font-bold text-3xl sm:text-4xl lg:text-5xl">
+      <h1 className="text-xl font-bold sm:text-2xl">HELLO I'M</h1>        
+      <h2 className="mt-5 mb-2 text-3xl font-bold sm:text-4xl lg:text-5xl">
         <span>Abraham Manuel</span><br />
         <span className="flex items-center mt-2 ">
           Hilario Fernández
-          <MdWavingHand className="text-yellow-500 text-4xl ml-4 mt-2 rotate-360" />
+          <MdWavingHand className="mt-2 ml-4 text-4xl text-yellow-500 rotate-360" />
         </span>
       </h2>
       <TypedText text="Full Stack Developer & Android Developer" />
@@ -53,7 +39,7 @@ export const Inicio = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         >         
-        <h2 className="text-lg font-bold text-white mb-2">Quick Stats</h2>
+        <h2 className="mb-2 text-lg font-bold text-white">Quick Stats</h2>
         </motion.div>
 
         <div className="flex flex-wrap gap-4">
@@ -63,11 +49,11 @@ export const Inicio = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.2 }}
-              className="bg-gray-400 w-30 rounded-2xl p-2 text-black font-medium flex flex-col items-center text-center shadow hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="flex flex-col items-center p-2 font-medium text-center text-white transition-transform duration-300 bg-gray-500 cursor-pointer w-30 rounded-2xl hover:scale-110"
             >
               {item.icon}
-              <p className="text-sm font-semibold">{item.otherlabel}</p>
-              <p className="text-xs text-gray-600">{item.label}</p>
+              <p className="text-sm font-semibold text-white">{item.otherlabel}</p>
+              <p className="text-xs text-white">{item.label}</p>
             </motion.div>
           ))}
         </div>
@@ -80,10 +66,10 @@ export const Inicio = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <h1 className="text-2xl font-semibold underline text-emerald-400">
+        <h1 className="text-2xl font-semibold text-green-500 underline">
           abraham2004hf@gmail.com
         </h1>
-        <p className="font-semibold text-xl">
+        <p className="text-xl font-semibold">
           Lima, Puente Piedra <br /> Peru
         </p>
       </motion.div>
@@ -111,47 +97,58 @@ export const Inicio = () => {
       </div>
       
       {/* Sección de Iconos */}
-      <div className="w-full lg:w-[40%] flex flex-wrap justify-center items-center gap-6 p-6 ">
-        {/* React */}
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          whileHover={{ scale: 1.2 }}
-          className="inline-block rounded-full bg-black p-5"
-        >
-          <FaReact className="text-2xl cursor-pointer" />
-        </motion.div>
+      <div className="w-full lg:w-[40%] flex flex-wrap justify-left items-center gap-6 p-6">       
+        <div className="relative flex items-center justify-center w-100 h-100">
+          {/* Imagen centrada */}
+          <div className="z-10 overflow-hidden border-4 border-white rounded-full shadow-lg w-100 h-100">
+            <img
+              src={foto}
+              alt="Mi foto"
+              className="object-cover w-full h-full"
+            />
+          </div>
 
-        {/* Laravel */}
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          whileHover={{ scale: 1.2 }}
-          className="inline-block rounded-full bg-white text-black p-5"
-        >
-          <FaLaravel className="text-2xl cursor-pointer" />
-        </motion.div>
+          {/* Iconos flotantes alrededor de la imagen */}
+          <motion.div
+            animate={{
+              x: [120, 140, 100, 120],
+              y: [-80, -60, -100, -80],
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            whileHover={{ scale: 1.3 }}
+            className="absolute p-5 text-black bg-white rounded-full shadow-lg cursor-pointer"
+            style={{ top: '25%', right: '15%' }}
+          >
+            <FaReact className="text-2xl" />
+          </motion.div>
 
-        {/* MySQL */}
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-          whileHover={{ scale: 1.2 }}
-          className="inline-block rounded-full bg-black p-5"
-        >
-          <SiMysql className=" text-2xl cursor-pointer" />
-        </motion.div>
+          <motion.div
+            animate={{
+              x: [-120, -140, -100, -120],
+              y: [80, 100, 60, 80],
+            }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            whileHover={{ scale: 1.3 }}
+            className="absolute p-5 text-black bg-white rounded-full shadow-lg cursor-pointer"
+            style={{ bottom: '10%', left: '15%' }}
+          >
+            <FaLaravel className="text-2xl" />
+          </motion.div>
 
-        {/* Android */}
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
-          whileHover={{ scale: 1.2 }}
-          className="inline-block rounded-full bg-black p-5"
-        >
-          <FaAndroid className="text-2xl cursor-pointer" />
-        </motion.div>
-      </div> 
+          <motion.div
+            animate={{
+              x: [0, 20, -20, 0],
+              y: [-120, -140, -130, -120],
+            }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            whileHover={{ scale: 1.3 }}
+            className="absolute p-5 text-black bg-white rounded-full shadow-lg cursor-pointer"
+            style={{ top: '15%', left: '5%', marginLeft: '-20px' }}
+          >
+            <FaAndroid className="text-2xl" />
+          </motion.div>
+        </div>
+      </div>     
     </section> 
   )
 }

@@ -1,4 +1,3 @@
-// SocialIcon.jsx
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
@@ -18,11 +17,4 @@ export const SocialIcon = ({ href, children, color = "hover:bg-pink-500", size =
       </div>
     </a>
   );
-};
-
-SocialIcon.propTypes = {
-  href: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string,
-  size: PropTypes.string,
 };
