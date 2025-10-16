@@ -1,17 +1,25 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import foto from '../../assets/usuario.jpg';
 import { infos } from "../../data/InfoData";
 import { FaExclamationCircle } from 'react-icons/fa';
 import { AiFillBell } from 'react-icons/ai';
 
 export const SobreMi = () => {
+  // Hook para detectar el scroll
+  const { scrollYProgress } = useScroll();
+  
+  // Transformaciones para la imagen (aparece al hacer scroll)
+  const imageOpacity = useTransform(scrollYProgress, [0.2, 0.5], [0, 1]);
+  const imageScale = useTransform(scrollYProgress, [0.2, 0.5], [0.8, 1]);
+  const imageY = useTransform(scrollYProgress, [0.2, 0.5], [-80, 0]);
+  
   return (
     <section id="sobre-mi" className="p-6 text-white md:p-20">
       <div className="max-w-[1200px] mx-auto ">
         {/* Título principal */}
         <div className='py-3 m-auto space-y-3 text-center'>
           <h1 className='text-3xl font-bold md:text-5xl'>About me</h1>
-          <p className='text-gray-400 text-md md:text-lg'>
+          <p className='font-semibold text-gray-400 text-md md:text-lg'>
             Discover my journey, passions and the story behind my work
           </p>
         </div>
@@ -20,10 +28,13 @@ export const SobreMi = () => {
         <div className='flex flex-col gap-10 mt-10 lg:flex-row'>
           {/* Imagen */}
           <motion.div 
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            style={{ 
+              opacity: imageOpacity,
+              scale: imageScale,
+              y: imageY,
+            }}
           >
+            <img src={foto} alt="Mi foto" className="object-cover h-auto w-80"/> {/* Buscar implementar mas imagenes */}
             <img src={foto} alt="Mi foto" className="object-cover h-auto w-80"/>
           </motion.div>
           
