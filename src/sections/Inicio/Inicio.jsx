@@ -1,4 +1,3 @@
-import fondo from '../../assets/jjj.png';
 import { motion } from "framer-motion";
 import { SocialIcon } from "../../components/SocialIcon"
 import { FaGithub, FaLinkedin, FaInstagram, FaReact, FaLaravel, FaAndroid } from 'react-icons/fa';

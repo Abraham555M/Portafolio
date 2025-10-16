@@ -1,94 +1,124 @@
-import React from 'react'
 import { motion } from "framer-motion";
-import foto from '../../assets/foto.png';
-import { RiFocusLine } from "react-icons/ri";
-import { FaQuestionCircle, FaStar } from 'react-icons/fa';
+import foto from '../../assets/usuario.jpg';
 import { infos } from "../../data/InfoData";
+import { FaExclamationCircle } from 'react-icons/fa';
+import { AiFillBell } from 'react-icons/ai';
 
-const codeString = `
-const softSkills = [
-  "Responsabilidad",
-  "Liderazgo",
-  "Proactividad",
-  "Trabajo en equipo",
-  "Aprendizaje continuo",
-  "Comunicación efectiva"
-];
-`
 export const SobreMi = () => {
+  return (
+    <section id="sobre-mi" className="p-6 text-white md:p-20">
+      <div className="max-w-[1200px] mx-auto ">
+        {/* Título principal */}
+        <div className='py-3 m-auto space-y-3 text-center'>
+          <h1 className='text-3xl font-bold md:text-5xl'>About me</h1>
+          <p className='text-gray-400 text-md md:text-lg'>
+            Discover my journey, passions and the story behind my work
+          </p>
+        </div>
 
-   return (
-    <section id="sobre-mi" className="p-20 text-white border">
-      {/* About me*/}
-      <div className='py-3 m-auto space-y-3 text-center'>
-        <h1 className='text-5xl font-bold'>About me</h1>
-        <p className='text-gray-400 text-md'>Discover my journey, passions and the story behind my work </p>
-      </div>
-
-      {/* Contenido About me */}
-      <div className='flex gap-10 mt-13'>
-        {/* Imagen */} 
-        <motion.div 
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className='transition-transform duration-300 w-80 hover:scale-105'
-        >
-        <img src={foto} alt="Mi foto"/>
-        </motion.div>
-        
-        {/* Información */}          
-        <div className='space-y-4 border w-250'>
-          {/* Primer Nivel */}
-          <div className='flex gap-4'>
-            <div className='flex-1 px-6 py-4 space-y-4 border'>
-              <div className='flex items-center gap-2'>
-                <RiFocusLine />
-                <h1>Who Am I</h1>
-              </div>
-              <div>
-                <p>
-                  I’m Abraham Manuel Hilario Fernández, a Full Stack and Android developer with over 1 year of experience building efficient and modern technological solutions.                </p>
-              </div>
-            </div>     
-            <div className='flex-1 px-6 py-4 border'>
-              <h1>My Approach</h1>
-
-              
-            </div>         
-          </div>
-          {/* Segundo Nivel */}
-          <div className="flex flex-col gap-4 m-4">
-            {infos.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.2 }}
-                className="flex items-center gap-3" 
-              >
-                {/* Ícono */}
-                <div className="flex items-center justify-center p-2 text-white bg-black rounded-lg">
-                  {item.icon}
-                </div>
-
-                {/* Texto */}
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-center">
-                  <p className="font-semibold">{item.val}</p>
-                  <p>{item.label}</p>
-                </div>
-              </motion.div>
-            ))}
+        {/* Contenido principal */}
+        <div className='flex flex-col gap-10 mt-10 lg:flex-row'>
+          {/* Imagen */}
+          <motion.div 
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <img src={foto} alt="Mi foto" className="object-cover h-auto w-80"/>
+          </motion.div>
           
+          {/* Información */}
+          <div className="space-y-4  max-w-[48em] w-full mx-auto">
+            {/* Primer Nivel */}
+            <div className="flex flex-col gap-4 md:flex-row">
+              {/* Columna 1 */}
+              <div className="flex-1 px-4 py-4 space-y-4 md:px-6">
+                <div className="flex items-center gap-2 font-extrabold">
+                  <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit">
+                    <FaExclamationCircle className="text-xl" />
+                  </div>
+                  <h1 className="text-2xl text-white">Who Am I</h1>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-400">
+                    I’m Abraham Manuel Hilario Fernández, a Full Stack and Android Developer with over 1 year of experience building efficient, scalable, and modern technological solutions. I’m passionate about crafting clean code, intuitive interfaces, and impactful digital products.
+                  </p>
+                </div>
+              </div>
 
-            
-           
-            
+              {/* Columna 2 */}
+              <div className="flex-1 px-4 py-4 space-y-4 md:px-6">
+                <div className="flex items-center gap-2 font-extrabold">
+                  <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit">
+                    <FaExclamationCircle className="text-xl" />
+                  </div>
+                  <h1 className="text-2xl text-white">My Approach</h1>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-400">
+                    I believe in creating user-first solutions that combine performance, clean design, and efficient architecture. I focus on writing maintainable code, collaborating effectively, and continuously improving to deliver real impact.                  
+                  </p>
+                </div>
+              </div>
+            </div>
 
-            
+            {/* Segundo Nivel */}
+            <div className="flex flex-col gap-4 m-4">
+              <div className="flex items-center gap-2 font-extrabold">
+                <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit">
+                  <AiFillBell className="text-xl" />
+                </div>
+                <h1 className="text-2xl text-white">Personal Info</h1>
+              </div>
+
+              {/* Grid de información */}
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                {/* Columna 1 (4 items) */}
+                <div className="space-y-4">
+                  {infos.slice(0, 4).map((item, index) => (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.2 }}
+                      className="flex flex-col gap-3 sm:flex-row sm:items-center"
+                    >
+                      <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit">
+                        {item.icon}
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                        <p className="font-bold text-white">{item.val}</p>
+                        <p className="text-gray-400">{item.label}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Columna 2 (2 items) */}
+                <div className="space-y-4">
+                  {infos.slice(4, 6).map((item, index) => (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.2 }}
+                      className="flex flex-col gap-3 sm:flex-row sm:items-center"
+                    >
+                      <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit">
+                        {item.icon}
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                        <p className="font-bold text-white">{item.val}</p>
+                        <p className="text-gray-400">{item.label}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>    
-      </div>     
+        </div>
+      </div>
     </section>
   )
 }

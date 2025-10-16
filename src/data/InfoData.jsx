@@ -1,40 +1,41 @@
-import { FaLaptop } from "react-icons/fa";
+import { FaFlag, FaLaptop, FaPhoneAlt, FaUser, FaUserGraduate } from "react-icons/fa";
+import { MdAccountBalance, MdEmail } from "react-icons/md";
 
 export const infos = [
     {
         id: 1,
         val: "Name:",
-        label: "Abraham Manuel Hilario Fernández",
-        icon: <FaLaptop className="mb-1 text-2xl" />
+        label: "Abraham Hilario Fernández",
+        icon: <FaUser />
     },
     {
         id: 2,
         val: "Email:",
         label: "abraham2004hf@gmail.com",
-        icon: <FaLaptop className="mb-1 text-2xl" />
+        icon: <MdEmail />
     },
     {
         id: 3,
         val: "Phone:",
         label: "+51 934806776",
-        icon: <FaLaptop className="mb-1 text-2xl" />
+        icon: <FaPhoneAlt />
     },
     {
         id: 4,
         val: "Country:",
         label: "Peru",
-        icon: <FaLaptop className="mb-1 text-2xl" />
+        icon: <FaFlag />
     },
     {
         id: 5,
         val: "Level:",
         label: "Graduate",
-        icon: <FaLaptop className="mb-1 text-2xl" />
+        icon: <FaUserGraduate />
     },
     {
         id: 5,
         val: "Education:",
         label: "Universidad Privada del Norte",
-        icon: <FaLaptop className="mb-1 text-2xl" />
+        icon: <MdAccountBalance />
     },
 ];
