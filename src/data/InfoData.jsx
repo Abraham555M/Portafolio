@@ -4,38 +4,38 @@ import { MdAccountBalance, MdEmail } from "react-icons/md";
 export const infos = [
     {
         id: 1,
-        val: "Name:",
-        label: "Abraham Hilario Fernández",
+        val: "",
+        label: "Name: Abraham Hilario Fernández",
         icon: <FaUser />
     },
     {
         id: 2,
-        val: "Email:",
-        label: "abraham2004hf@gmail.com",
+        val: "",
+        label: "Email: abraham2004hf@gmail.com",
         icon: <MdEmail />
     },
     {
         id: 3,
-        val: "Phone:",
-        label: "+51 934806776",
+        val: "",
+        label: "Phone: +51 934806776",
         icon: <FaPhoneAlt />
     },
     {
         id: 4,
-        val: "Country:",
-        label: "Peru",
+        val: "",
+        label: "Country: Peru",
         icon: <FaFlag />
     },
     {
         id: 5,
-        val: "Level:",
-        label: "Graduate",
+        val: "",
+        label: "Level: Graduate",
         icon: <FaUserGraduate />
     },
     {
-        id: 5,
-        val: "Education:",
-        label: "Universidad Privada del Norte",
+        id: 6,
+        val: "",
+        label: "Education: Universidad Privada del Norte",
         icon: <MdAccountBalance />
     },
 ];

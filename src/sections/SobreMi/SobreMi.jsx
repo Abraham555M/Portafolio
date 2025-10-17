@@ -13,15 +13,9 @@ export const SobreMi = () => {
   const imageScale = useTransform(scrollYProgress, [0.2, 0.5], [0.8, 1]);
   const imageY = useTransform(scrollYProgress, [0.2, 0.5], [-80, 0]);
 
-  const frontImageId = imagenes[frontIndex].id;
-  const backImageId = imagenes[(frontIndex + 1) % imagenes.length].id;
-
   const handleClick = () => {
     setFrontIndex((prev) => (prev + 1) % imagenes.length);
   };
-
-  const frontImage = imagenes[frontIndex].foto;
-  const backImage = imagenes[(frontIndex + 1) % imagenes.length].foto;
 
   return (
     <section id="sobre-mi" className="p-6 text-white md:p-20">
@@ -35,36 +29,43 @@ export const SobreMi = () => {
         </div>
 
         <div className='flex flex-col gap-10 mt-10 lg:flex-row'>
-
           {/* Imagen */}
           <motion.div
-            className="relative flex justify-center mx-auto mt-10 cursor-pointer lg:w-1/2"
+            className="relative flex justify-center mx-auto mt-10 cursor-pointer lg:w-1/2 min-h-[25rem] sm:min-h-[24rem] md:min-h-[28rem]"
             style={{ opacity: imageOpacity, scale: imageScale, y: imageY }}
             onClick={handleClick}
           >
-
-            {/* Imagen principal */}
-            <motion.img
-              key={frontImageId}
-              src={frontImage}
-              alt="Front Image"
-              className="absolute z-20 object-cover w-48 h-64 transform shadow-xl rounded-xl sm:w-56 sm:h-72 md:w-64 md:h-80"
-              initial={{ opacity: 0, scale: 0.9, rotate: 10, x: 50, y: 50 }}
-              animate={{ opacity: 1, scale: 1, rotate: 6, x: 0, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            />
-
-            {/* Imagen detrás */}
-            <motion.img
-              key={backImageId}
-              src={backImage}
-              alt="Back Image"
-              className="absolute z-10 object-cover w-48 h-64 transform shadow-xl rounded-xl sm:w-56 sm:h-72 md:w-64 md:h-80"
-              initial={{ opacity: 0.7, scale: 0.9, rotate: -10, x: -60, y: 70 }}
-              animate={{ opacity: 0.7, scale: 0.9, rotate: -6, x: -60, y: 70 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            />
+            {imagenes.map((imagen, index) => {
+              // Calcular el índice relativo respecto a la imagen frontal
+              const relativeIndex = (index - frontIndex + imagenes.length) % imagenes.length;
+              
+              // La imagen frontal tiene relativeIndex = 0
+              const isFront = relativeIndex === 0;
+              
+              return (
+                <motion.img
+                  key={imagen.id}
+                  src={imagen.foto}
+                  alt={`Image ${index + 1}`}
+                  className="absolute object-cover w-48 h-64 transform shadow-xl rounded-xl sm:w-56 sm:h-72 md:w-64 md:h-80"
+                  animate={{
+                    opacity: isFront ? 1 : 0.7 - (relativeIndex * 0.1),
+                    scale: isFront ? 1 : 0.9 - (relativeIndex * 0.05),
+                    rotate: isFront ? 6 : -6 - (relativeIndex * 2),
+                    x: isFront ? 0 : -60 - (relativeIndex * 10),
+                    y: isFront ? 0 : 70 + (relativeIndex * 10),
+                    zIndex: isFront ? 20 : 20 - relativeIndex
+                  }}
+                  transition={{ 
+                    duration: 0.6, 
+                    ease: "easeInOut" 
+                  }}
+                  style={{
+                    zIndex: isFront ? 20 : 20 - relativeIndex
+                  }}
+                />
+              );
+            })}
           </motion.div>
 
           {/* Información */}
@@ -79,7 +80,7 @@ export const SobreMi = () => {
                   <h1 className="text-2xl text-white">Who Am I</h1>
                 </div>
                 <p className="font-semibold text-gray-400">
-                  I’m Abraham Manuel Hilario Fernández, a Full Stack and Android Developer with over 1 year of experience...
+                  I’m Abraham Manuel Hilario Fernández, a Full Stack and Android Developer with over 1 year of professional experience building functional, scalable, and user-friendly digital solutions. I’m passionate about transforming ideas into powerful applications that combine clean design, solid architecture, and smooth user experiences.                 
                 </p>
               </div>
 
@@ -91,8 +92,7 @@ export const SobreMi = () => {
                   <h1 className="text-2xl text-white">My Approach</h1>
                 </div>
                 <p className="font-semibold text-gray-400">
-                  I believe in creating user-first solutions that combine performance and clean design...
-                </p>
+                  I believe in creating user-first solutions that balance performance, clean design, and functionality, ensuring every project feels intuitive, efficient, and impactful.                </p>
               </div>
             </div>
 
@@ -106,41 +106,53 @@ export const SobreMi = () => {
               </div>
 
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                {/* Primera columna */}
                 <div className="space-y-4">
-                  {infos.slice(0, 4).map((item, index) => (
+                  {infos.slice(0, Math.ceil(infos.length / 2)).map((item, index) => (
                     <motion.div
                       key={item.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.2 }}
-                      className="flex flex-col gap-3 sm:flex-row sm:items-center"
+                      className="flex flex-col gap-3 sm:flex-row sm:items-start"
                     >
-                      <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit">
+                      <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit shrink-0">
                         {item.icon}
                       </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
-                        <p className="font-bold text-white">{item.val}</p>
-                        <p className="text-gray-400">{item.label}</p>
+                      <div className="flex flex-col">
+                        <p className="text-gray-300">
+                          <span className="font-bold text-white">
+                            {item.label.split(':')[0]}:
+                          </span>
+                          {' '}
+                          {item.label.split(':')[1]}
+                        </p>
                       </div>
                     </motion.div>
                   ))}
                 </div>
 
+                {/* Segunda columna */}
                 <div className="space-y-4">
-                  {infos.slice(4, 6).map((item, index) => (
+                  {infos.slice(Math.ceil(infos.length / 2)).map((item, index) => (
                     <motion.div
                       key={item.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.2 }}
-                      className="flex flex-col gap-3 sm:flex-row sm:items-center"
+                      className="flex flex-col gap-3 sm:flex-row sm:items-start"
                     >
-                      <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit">
+                      <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit shrink-0">
                         {item.icon}
                       </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
-                        <p className="font-bold text-white">{item.val}</p>
-                        <p className="text-gray-400">{item.label}</p>
+                      <div className="flex flex-col">
+                        <p className="text-gray-300">
+                          <span className="font-bold text-white">
+                            {item.label.split(':')[0]}:
+                          </span>
+                          {' '}
+                          {item.label.split(':')[1]}
+                        </p>
                       </div>
                     </motion.div>
                   ))}
@@ -148,7 +160,6 @@ export const SobreMi = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
