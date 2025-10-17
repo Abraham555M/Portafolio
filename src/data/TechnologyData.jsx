@@ -6,6 +6,7 @@ import { SiMysql, SiPostman } from "react-icons/si";
 export const proyectos = [
   {
     imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
+    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
     titulo: "Mi Proyecto Laravel + React",
     descipcion: "Un sistema de pedidos en tiempo real.",
     enlace: "https://github.com/mi-proyecto",
@@ -17,8 +18,9 @@ export const proyectos = [
   },
   {
     imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
+    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
     titulo: "Landing Page",
-    descipcion: "Landing page moderna y responsiva.",
+    descipcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     enlace: "https://github.com/otro-proyecto",
     tecnologias: [
       { nombre: "HTML", icono: <FaHtml5 /> },
@@ -28,8 +30,9 @@ export const proyectos = [
   },
   {
     imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
+    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
     titulo: "Marcado de Asistencia",
-    descipcion: "Landing page moderna y responsiva.",
+    descipcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     enlace: "https://github.com/otro-proyecto",
     tecnologias: [
       { nombre: "Laravel", icono: <FaLaravel /> },
@@ -42,8 +45,9 @@ export const proyectos = [
   },
   {
     imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
+    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
     titulo: "Marcado de Asistencia",
-    descipcion: "Landing page moderna y responsiva.",
+    descipcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     enlace: "https://github.com/otro-proyecto",
     tecnologias: [
       { nombre: "Laravel", icono: <FaLaravel /> },
@@ -56,8 +60,9 @@ export const proyectos = [
   },
   {
     imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
+    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
     titulo: "Marcado de Asistencia",
-    descipcion: "Landing page moderna y responsiva.",
+    descipcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     enlace: "https://github.com/otro-proyecto",
     tecnologias: [
       { nombre: "Laravel", icono: <FaLaravel /> },

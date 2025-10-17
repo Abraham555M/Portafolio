@@ -1,38 +1,63 @@
+import { useState } from "react";
 import { FaUpRightFromSquare } from "react-icons/fa6";
 
-const ProjectCard = ({ imagen, titulo, descipcion, enlace, tecnologias }) => {
-  return (
-    <div className="max-w-md p-5 text-black bg-white shadow-lg w-100 rounded-2xl">
-      <div className="relative overflow-hidden rounded-xl">
-        {/* Imagen */}
-        <img src={imagen} alt="Proyecto" className="object-cover w-full h-48" />
+const ProjectCard = ({ imagen, imagen2, titulo, descipcion, enlace, tecnologias }) => {
+  const [hovered, setHovered] = useState(false);
 
-        {/* Efecto degradado en la parte inferior */}
+  return (
+    <div
+      className="max-w-md h-[450px] p-5 text-black transition-transform duration-300 transform bg-white shadow-lg rounded-2xl hover:scale-100"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* Contenedor de imágenes */}
+      <div className="relative h-48 overflow-hidden rounded-xl">
+        {/* Imagen 1 */}
+        <img
+          src={imagen}
+          alt="Proyecto"
+          className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 ${
+            hovered ? "opacity-0" : "opacity-100"
+          }`}
+        />
+        {/* Imagen 2 */}
+        <img
+          src={imagen2}
+          alt="Proyecto Hover"
+          className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-500 ${
+            hovered ? "opacity-100" : "opacity-0"
+          }`}
+        />
+
+        {/* Degradado inferior */}
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
       </div>
 
-      <div className="flex items-center space-x-2">
-        <h1 className="py-2 text-2xl font-bold">{titulo}</h1>
-        <a href={enlace} target="_blank" rel="noopener noreferrer">
-          <FaUpRightFromSquare className="mt-2 transition-colors hover:text-blue-600" />
-        </a>
-      </div>
+      {/* Contenedor scrollable */}
+      <div className="mt-2 overflow-y-auto h-[170px] pr-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+        {/* Título + Icono */}
+        <div className="flex items-center mb-2 space-x-2.5">
+          <h1 className="text-2xl font-bold">{titulo}</h1>
+          <a href={enlace} target="_blank" rel="noopener noreferrer">
+            <FaUpRightFromSquare className="mt-1 transition-colors hover:text-blue-600" />
+          </a>
+        </div>
 
-      <p className="mb-5 text-sm text-gray-600">
-        {descipcion}
-      </p>
+        {/* Descripción */}
+        <p className="mb-4 text-sm text-gray-600">{descipcion}</p>
 
-      {/* Tecnologías */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {tecnologias.map((tech, index) => (
-          <div
-            key={index}
-            className="flex items-center p-2 space-x-2 text-xs font-bold text-white bg-black rounded-2xl"
-          >
-            {tech.icono}
-            <span>{tech.nombre}</span>
-          </div>
-        ))}
+        {/* Tecnologías */}
+        <div className="flex flex-wrap gap-2">
+          {tecnologias.map((tech, index) => (
+            <div
+              key={index}
+              className="flex items-center p-2 space-x-2 text-xs font-bold text-white bg-black rounded-2xl"
+            >
+              {tech.icono}
+              <span>{tech.nombre}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
