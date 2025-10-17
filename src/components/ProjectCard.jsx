@@ -1,62 +1,40 @@
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { SiReact, SiLaravel, SiMysql, SiAndroid } from 'react-icons/si';
+import { FaUpRightFromSquare } from "react-icons/fa6";
 
-const ProjectCard = ({ title, description, imageUrl, githubUrl, liveUrl, tools }) => {
+const ProjectCard = ({ imagen, titulo, descipcion, enlace, tecnologias }) => {
   return (
-    
-    <div className="relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-5 shadow-xl transition hover:shadow-cyan-500/30 hover:scale-[1.015] duration-300 group max-w-md">
-      {/* Imagen de fondo */}
-      <div className="w-full h-48 mb-4 overflow-hidden rounded-xl">
-        <img
-          alt={title}
-          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-        />
+    <div className="max-w-md p-5 text-black bg-white shadow-lg w-100 rounded-2xl">
+      <div className="relative overflow-hidden rounded-xl">
+        {/* Imagen */}
+        <img src={imagen} alt="Proyecto" className="object-cover w-full h-48" />
+
+        {/* Efecto degradado en la parte inferior */}
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
       </div>
 
-      {/* Título */}
-      <h3 className="mb-2 text-2xl font-semibold text-white">{title}</h3>
+      <div className="flex items-center space-x-2">
+        <h1 className="py-2 text-2xl font-bold">{titulo}</h1>
+        <a href={enlace} target="_blank" rel="noopener noreferrer">
+          <FaUpRightFromSquare className="mt-2 transition-colors hover:text-blue-600" />
+        </a>
+      </div>
 
-      {/* Descripción */}
-      <p className="mb-4 text-sm leading-relaxed text-gray-300">{description}</p>
+      <p className="mb-5 text-sm text-gray-600">
+        {descipcion}
+      </p>
 
-      {/* Herramientas */}
-      <div className="flex gap-4 mb-4">
-        {tools?.map((ToolIcon, i) => (
-          <ToolIcon
-            key={i}
-            className="text-2xl text-gray-300 transition-colors duration-200 hover:text-cyan-400"
-            title={ToolIcon.name.replace("Si", "")}
-          />
+      {/* Tecnologías */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {tecnologias.map((tech, index) => (
+          <div
+            key={index}
+            className="flex items-center p-2 space-x-2 text-xs font-bold text-white bg-black rounded-2xl"
+          >
+            {tech.icono}
+            <span>{tech.nombre}</span>
+          </div>
         ))}
       </div>
-
-      {/* Enlaces */}
-      <div className="flex gap-6">
-        {githubUrl && (
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 transition-colors hover:text-white"
-            title="Ver repositorio"
-          >
-            <FaGithub size={20} />
-          </a>
-        )}
-        {liveUrl && (
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 transition-colors hover:text-white"
-            title="Ver demo"
-          >
-            <FaExternalLinkAlt size={18} />
-          </a>
-        )}
-      </div>
     </div>
-      
   );
 };
 
