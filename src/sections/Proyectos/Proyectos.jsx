@@ -1,13 +1,37 @@
-import { motion } from 'framer-motion';
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 import ProjectCard from "../../components/ProjectCard";
 import { proyectos } from "../../data/TechnologyData";
 
 export const Proyectos = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { amount: 0.3 });
+
+  const containerControls = useAnimation();
+  const titleControls = useAnimation();
+  const cardControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      containerControls.start("visible");
+      titleControls.start("visible");
+      cardControls.start("visible");
+    } else {
+      containerControls.start("exit");
+      titleControls.start("exit");
+      cardControls.start("exit");
+    }
+  }, [isInView]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: { staggerChildren: 0.2 }
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 0.5 }
     }
   };
 
@@ -18,6 +42,12 @@ export const Proyectos = () => {
       y: 0,
       scale: 1,
       transition: { duration: 0.5, ease: "easeOut" }
+    },
+    exit: {
+      opacity: 0,
+      y: -50,
+      scale: 0.9,
+      transition: { duration: 0.4, ease: "easeIn" }
     }
   };
 
@@ -27,20 +57,26 @@ export const Proyectos = () => {
       opacity: 1,
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" }
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: { duration: 0.4, ease: "easeIn" }
     }
   };
 
   return (
-    <section 
-      id="proyectos" 
+    <section
+      id="proyectos"
+      ref={containerRef}
       className="px-5 py-16 text-white border sm:px-10 md:px-20 lg:py-24"
     >
       {/* Título y descripción */}
       <motion.div
-        className="max-w-3xl mx-auto space-y-3 text-center"
+        className="max-w-3xl mx-auto space-y-10 text-center"
+        variants={containerVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        animate={titleControls}
       >
         <motion.h1
           className="text-2xl font-bold sm:text-3xl md:text-5xl"
@@ -63,8 +99,7 @@ export const Proyectos = () => {
         className="grid grid-cols-1 gap-8 mx-auto mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:max-w-7xl"
         variants={containerVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        animate={cardControls}
       >
         {proyectos.map((proyecto, index) => (
           <motion.div

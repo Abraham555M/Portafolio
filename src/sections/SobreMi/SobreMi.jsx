@@ -9,7 +9,7 @@ export const SobreMi = () => {
   const { scrollYProgress } = useScroll();
   const [frontIndex, setFrontIndex] = useState(0);
 
-  const imageOpacity = useTransform(scrollYProgress, [0.2, 0.5], [0, 1]);
+  const imageOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
   const imageScale = useTransform(scrollYProgress, [0.2, 0.5], [0.8, 1]);
   const imageY = useTransform(scrollYProgress, [0.2, 0.5], [-80, 0]);
 
@@ -21,7 +21,7 @@ export const SobreMi = () => {
     <section id="sobre-mi" className="p-6 text-white md:p-20">
       <div className="max-w-[1200px] mx-auto">
         {/* Título */}
-        <div className='py-3 m-auto space-y-3 text-center'>
+        <div className='py-3 m-auto space-y-10 text-center'>
           <h1 className='text-3xl font-bold md:text-5xl'>About me</h1>
           <p className='font-semibold text-gray-400 text-md md:text-lg'>
             Discover my journey, passions and the story behind my work
