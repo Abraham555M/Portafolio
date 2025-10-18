@@ -34,7 +34,7 @@ export const Inicio = () => {
               <MdWavingHand className="mt-2 ml-4 text-4xl text-yellow-500 rotate-360" />
             </span>
           </h2>
-          <TypedText text="Full Stack Developer & Android Developer" />
+          <TypedText text="Junior Full Stack & Android Developer" />
         </motion.div>
 
         {/* Parte 2 */}

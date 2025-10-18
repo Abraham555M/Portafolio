@@ -12,7 +12,7 @@ export const Habilidades = () => {
     : skills;
   
   return (
-    <section id="habilidades" className="p-6 text-white md:p-20">
+    <section id="habilidades" className="p-6 text-white border md:p-20">
       <div className="max-w-[1200px] mx-auto">
         {/* Título */}
         <div className="py-3 space-y-10 text-center">
