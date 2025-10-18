@@ -4,6 +4,7 @@ import { imagenes } from "../../data/ImagenesData";
 import { infos } from "../../data/InfoData";
 import { FaExclamationCircle } from 'react-icons/fa';
 import { AiFillBell } from 'react-icons/ai';
+import { Navbar } from "../../components/Navbar";
 
 export const SobreMi = () => {
   const { scrollYProgress } = useScroll();
@@ -18,10 +19,10 @@ export const SobreMi = () => {
   };
 
   return (
-    <section id="sobre-mi" className="p-6 text-white md:p-20">
+    <section id="sobre-mi" className="p-6 text-white border md:p-20">
       <div className="max-w-[1200px] mx-auto">
         {/* Título */}
-        <div className='py-3 m-auto space-y-10 text-center'>
+        <div className='py-3 m-auto space-y-5 text-center'>
           <h1 className='text-3xl font-bold md:text-5xl'>About me</h1>
           <p className='font-semibold text-gray-400 text-md md:text-lg'>
             Discover my journey, passions and the story behind my work
