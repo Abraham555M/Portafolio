@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaDownload } from "react-icons/fa"; // 👈 Importamos el icono
+import { IoMdDownload } from "react-icons/io";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +72,7 @@ export const Navbar = () => {
 
         {/* Botón CV (desktop) */}
         <div className="items-center flex-shrink-0 hidden gap-2 px-3 py-2 transition-transform duration-300 border-2 cursor-pointer xl:gap-3 xl:px-4 2xl:px-5 lg:flex rounded-3xl hover:bg-green-500 hover:scale-105 whitespace-nowrap">
-          <FaDownload className="w-4 h-4 xl:w-5 xl:h-5" /> {/* 👈 Ícono de descarga */}
+          <IoMdDownload className="w-4 h-4 xl:w-5 xl:h-5" /> {/* 👈 Ícono de descarga */}
           <button className="text-xs xl:text-sm 2xl:text-base">Download CV</button>
         </div>
       </div>
@@ -101,7 +101,7 @@ export const Navbar = () => {
             {/* Botón CV móvil */}
             <li>
               <div className="flex items-center justify-center gap-2 px-5 py-2 mx-auto mt-2 transition duration-300 border-2 cursor-pointer rounded-3xl hover:bg-green-500 max-w-fit">
-                <FaDownload className="w-5 h-5" /> {/* 👈 Ícono de descarga */}
+                <IoMdDownload className="w-5 h-5" /> {/* 👈 Ícono de descarga */}
                 <button>Download CV</button>
               </div>
             </li>

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
+// YA NO SE USA
 export const SocialIcon = ({ href, children, color = "hover:bg-pink-500", size = "text-2xl" }) => {
   return (
     <a
