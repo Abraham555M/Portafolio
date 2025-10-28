@@ -71,9 +71,17 @@ export const Navbar = () => {
         </nav>
 
         {/* Botón CV (desktop) */}
-        <div className="items-center flex-shrink-0 hidden gap-2 px-3 py-2 transition-transform duration-300 border-2 cursor-pointer xl:gap-3 xl:px-4 2xl:px-5 lg:flex rounded-3xl hover:bg-green-500 hover:scale-105 whitespace-nowrap">
-          <IoMdDownload className="w-4 h-4 xl:w-5 xl:h-5" /> {/* 👈 Ícono de descarga */}
-          <button className="text-xs xl:text-sm 2xl:text-base">Download CV</button>
+        <div
+          onClick={() => {
+            const link = document.createElement("a");
+            link.href = "/src/assets/documentos/ABRAHAM MANUEL HILARIO FERNÁNDEZ.pdf"; 
+            link.download = "CV_Abraham_Manuel_Hilario_Fernández.pdf";   // Nombre con el que se descargará
+            link.click();
+          }}
+          className="items-center flex-shrink-0 hidden gap-2 px-3 py-2 transition-transform duration-300 border-2 cursor-pointer xl:gap-3 xl:px-4 2xl:px-5 lg:flex rounded-3xl hover:bg-green-500 hover:scale-105 whitespace-nowrap"
+        >
+          <IoMdDownload className="w-4 h-4 xl:w-5 xl:h-5" />
+          <span className="text-xs xl:text-sm 2xl:text-base">Download CV</span>
         </div>
       </div>
 

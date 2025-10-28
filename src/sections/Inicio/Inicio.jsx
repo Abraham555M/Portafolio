@@ -16,9 +16,13 @@ export const Inicio = () => {
   return (
     <section
       id="home"
-      className="border min-h-screen flex flex-col-reverse items-center justify-center max-w-[2000px] mx-auto py-20 text-white lg:flex-row lg:justify-between lg:items-center lg:gap-10 px-6"
+      className="min-h-screen flex flex-col-reverse items-center justify-center w-full mx-auto 
+                px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 py-20 
+                text-white border max-w-[2000px] 
+                lg:flex-row lg:justify-between lg:items-center lg:gap-10"
     >
-      <div className="w-full lg:w-[55%] flex flex-col justify-center gap-18 text-center lg:text-left pl-40 md:justify-center">
+      {/* Contenido izquierdo */}
+      <div className="w-full lg:w-[55%] flex flex-col justify-center gap-18 text-center lg:text-left md:justify-center">
         {/* Nombre */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
