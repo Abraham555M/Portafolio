@@ -19,31 +19,34 @@ export const Habilidades = () => {
           <h1 className="text-3xl font-bold md:text-5xl">Skills</h1>
 
           {/* Barra de categorías con scroll horizontal */}
-          <div className="w-full mx-auto overflow-x-auto border shadow-lg rounded-2xl bg-white/10 backdrop-blur-md border-white/20 scrollbar-hide">
-            <ul className="flex text-lg font-semibold">
+          <div className="w-full mx-auto overflow-x-auto border shadow-xl rounded-2xl bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-lg border-slate-700/40 scrollbar-hide">
+            <ul className="flex text-base font-semibold text-slate-200">
               {categorias.map((categoria, index) => (
                 <li
                   key={categoria.id}
                   onClick={() => setTipoSeleccionado(categoria.id)}
-                  className={`flex-1 min-w-[140px] px-6 py-3 cursor-pointer text-center ${
-                    index !== categorias.length - 1 ? "border-r" : ""
-                  } border-white/20 transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-lg ${
-                    tipoSeleccionado === categoria.id ? "bg-white/20" : ""
-                  }`}
+                  className={`flex-1 min-w-[140px] px-6 py-3 cursor-pointer text-center transition-all duration-300 
+                    ${index !== categorias.length - 1 ? "border-r border-slate-700/40" : ""}
+                    hover:bg-gradient-to-r hover:from-green-500/10 hover:to-green-400/10 
+                    hover:text-green-400
+                    ${tipoSeleccionado === categoria.id 
+                      ? "bg-gradient-to-r from-green-500/15 to-green-400/15 text-green-400" 
+                      : ""}
+                  `}
                 >
                   {categoria.nombre}
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Botón para ver todos */}
+          
+         {/* Button to show all */}
           {tipoSeleccionado && (
             <button
               onClick={() => setTipoSeleccionado(null)}
-              className="px-4 py-2 mt-4 text-sm font-semibold transition-all duration-300 border rounded-lg border-white/30 hover:bg-white/10"
+              className="px-5 py-2 mt-5 text-sm font-semibold tracking-wide transition-all duration-300 border rounded-lg shadow-md text-slate-200 border-green-500/40 bg-slate-800/40 backdrop-blur-md hover:bg-green-500/15 hover:border-green-500/70 hover:text-green-400 hover:shadow-green-500/20"
             >
-              Ver todos
+              Show All
             </button>
           )}
         </div>
