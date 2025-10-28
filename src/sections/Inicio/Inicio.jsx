@@ -43,23 +43,57 @@ export const Inicio = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-5 text-lg font-bold"
+            className="mb-6 text-2xl font-bold text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text"
           >
             Quick Stats
           </motion.h2>
 
-          <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
+          <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
             {stats.map((item, index) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.2 }}
-                className="flex flex-col items-center p-3 w-[120px] font-medium text-center text-white transition-transform duration-300 bg-gray-600 rounded-2xl hover:scale-110"
+                whileHover={{ scale: 1.08, y: -4 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative flex flex-col items-center p-4 w-[130px] font-medium text-center text-white rounded-2xl
+                          bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg
+                          border border-slate-700/50 shadow-xl
+                          hover:border-emerald-500/60 hover:shadow-emerald-500/30 hover:shadow-2xl
+                          before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br 
+                          before:from-emerald-500/0 before:to-cyan-500/0 
+                          hover:before:from-emerald-500/10 hover:before:to-cyan-500/10 
+                          before:transition-all before:duration-500"
               >
-                <div className="mb-1 text-2xl">{item.icon}</div>
-                <p className="text-sm font-semibold">{item.otherlabel}</p>
-                <p className="text-xs">{item.label}</p>
+                {/* Brillo decorativo */}
+                <div className="absolute top-0 right-0 w-16 h-16 transition-all duration-500 rounded-full bg-gradient-to-br from-emerald-400/0 to-transparent blur-xl group-hover:from-emerald-400/20"></div>
+                
+                {/* Contenido */}
+                <div className="relative z-10 flex flex-col items-center">
+                  {/* Icono */}
+                  <div className="relative mb-2">
+                    <div className="absolute inset-0 transition-all duration-500 rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 blur-sm group-hover:from-emerald-500/40 group-hover:to-cyan-500/40"></div>
+                    <motion.div
+                      whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                      className="relative text-3xl transition-colors duration-300 text-emerald-400 group-hover:text-emerald-300 drop-shadow-lg"
+                    >
+                      {item.icon}
+                    </motion.div>
+                  </div>
+
+                  {/* Número/Valor principal */}
+                  <p className="text-lg font-bold transition-colors duration-300 text-slate-100 group-hover:text-white">
+                    {item.otherlabel}
+                  </p>
+
+                  {/* Label descriptivo */}
+                  <p className="text-xs transition-colors duration-300 text-slate-400 group-hover:text-slate-300">
+                    {item.label}
+                  </p>
+
+                  {/* Línea decorativa */}
+                  <div className="w-0 h-0.5 mt-2 bg-gradient-to-r from-emerald-500 to-cyan-500 group-hover:w-10 transition-all duration-500 rounded-full"></div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -113,4 +147,3 @@ export const Inicio = () => {
   );
 };
 
-/* 🛰️ Componente para iconos orbitantes */
