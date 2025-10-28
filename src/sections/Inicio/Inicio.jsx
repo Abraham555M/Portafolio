@@ -16,33 +16,32 @@ export const Inicio = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col-reverse items-center justify-center w-full mx-auto 
-                px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 py-20 
-                text-white border max-w-[2000px] 
-                lg:flex-row lg:justify-between lg:items-center lg:gap-10"
+      className="flex flex-col-reverse items-center justify-center w-full min-h-screen px-6 py-20 text-white sm:px-8 md:px-12 lg:px-20 xl:px-28 lg:flex-row lg:justify-between lg:items-center lg:gap-10"
     >
       {/* Contenido izquierdo */}
-      <div className="w-full lg:w-[55%] flex flex-col justify-center gap-18 text-center lg:text-left md:justify-center">
+      <div className="w-full lg:w-[55%] flex flex-col justify-center gap-8 md:gap-12 lg:gap-18 text-center lg:text-left md:justify-center px-2 sm:px-0">
         {/* Nombre */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          className="w-full"
         >
           <h1 className="text-lg font-bold sm:text-2xl">HELLO I'M</h1>
-          <h2 className="mt-5 mb-2 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-            <span>Abraham Manuel</span>
-            <br />
+          <h2 className="mt-5 mb-2 text-2xl font-bold leading-tight break-words sm:text-3xl md:text-4xl lg:text-5xl">
+            <span className="block">Abraham Manuel</span>
             <span className="flex flex-wrap items-center justify-center gap-2 mt-2 lg:justify-start">
-              Hilario Fernández
-              <MdWavingHand className="text-3xl text-yellow-500 sm:text-4xl" />
+              <span className="break-words">Hilario Fernández</span>
+              <MdWavingHand className="flex-shrink-0 text-2xl text-yellow-500 sm:text-3xl lg:text-4xl" />
             </span>
           </h2>
-          <TypedText text="Junior Full Stack & Android Developer" />
+          <div className="w-full">
+            <TypedText text="Junior Full Stack & Android Developer" />
+          </div>
         </motion.div>
 
         {/* Estadísticas */}
-        <div>
+        <div className="w-full">
           <motion.h2
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -52,7 +51,7 @@ export const Inicio = () => {
             Quick Stats
           </motion.h2>
 
-          <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:justify-start">
             {stats.map((item) => (
               <motion.div
                 key={item.id}
@@ -60,7 +59,7 @@ export const Inicio = () => {
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.08, y: -4 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative flex flex-col items-center p-4 w-[130px] font-medium text-center text-white rounded-2xl
+                className="group relative flex flex-col items-center p-3 sm:p-4 w-[110px] sm:w-[130px] font-medium text-center text-white rounded-2xl
                           bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg
                           border border-slate-700/50 shadow-xl
                           hover:border-green-500/60 hover:shadow-green-500/30 hover:shadow-2xl
@@ -79,19 +78,19 @@ export const Inicio = () => {
                     <div className="absolute inset-0 transition-all duration-500 rounded-full bg-gradient-to-br from-green-500/20 to-green-500/20 blur-sm group-hover:from-green-500/40 group-hover:to-green-500/40"></div>
                     <motion.div
                       whileHover={{ rotate: [0, -10, 10, -10, 0] }}
-                      className="relative text-3xl text-green-400 transition-colors duration-300 group-hover:text-green-300 drop-shadow-lg"
+                      className="relative text-2xl text-green-400 transition-colors duration-300 sm:text-3xl group-hover:text-green-300 drop-shadow-lg"
                     >
                       {item.icon}
                     </motion.div>
                   </div>
 
                   {/* Número/Valor principal */}
-                  <p className="text-lg font-bold transition-colors duration-300 text-slate-100 group-hover:text-white">
+                  <p className="w-full text-base font-bold break-words transition-colors duration-300 sm:text-lg text-slate-100 group-hover:text-white">
                     {item.otherlabel}
                   </p>
 
                   {/* Label descriptivo */}
-                  <p className="text-xs transition-colors duration-300 text-slate-400 group-hover:text-slate-300">
+                  <p className="w-full text-xs break-words transition-colors duration-300 text-slate-400 group-hover:text-slate-300">
                     {item.label}
                   </p>
 
@@ -105,21 +104,21 @@ export const Inicio = () => {
 
         {/* Contacto */}
         <motion.div
-          className="flex flex-col gap-2 font-mono text-center lg:text-left"
+          className="flex flex-col w-full gap-2 font-mono text-center lg:text-left"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h1 className="text-lg font-semibold text-green-500 underline break-all sm:text-xl lg:text-2xl">
+          <h1 className="text-base font-semibold text-green-500 underline break-words sm:text-lg lg:text-xl xl:text-2xl overflow-wrap-anywhere">
             abraham2004hf@gmail.com
           </h1>
-          <p className="text-base font-semibold sm:text-lg lg:text-xl">
+          <p className="text-sm font-semibold break-words sm:text-base lg:text-lg xl:text-xl">
             Lima, Puente Piedra <br /> Peru
           </p>
         </motion.div>
       </div>
 
-     {/* Foto */}
+      {/* Foto */}
       <motion.div
         className="relative justify-center items-center w-full max-w-[400px] aspect-square mx-auto mb-10 lg:mb-0 hidden sm:flex"
         style={{
@@ -147,7 +146,6 @@ export const Inicio = () => {
           <SiMysql className="text-xl text-black sm:text-2xl" />
         </IconosInicio>
       </motion.div>
-
     </section>
   );
 };

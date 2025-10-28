@@ -16,36 +16,36 @@ export const Navbar = () => {
 
         {/* Botón hamburguesa (solo móvil) */}
         <button
-          className="z-10 lg:hidden focus:outline-none"
+          className="z-10 ml-auto lg:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? (
-            // Ícono X
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-7 h-7"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            // Ícono hamburguesa
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-7 h-7"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m0 6H4" />
-            </svg>
-          )}
-        </button>
+            {isOpen ? (
+              // Ícono X
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              // Ícono hamburguesa
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m0 6H4" />
+              </svg>
+            )}
+          </button>
 
         {/* Navbar desktop */}
         <nav className="flex-1 hidden mx-4 lg:block xl:mx-8">
@@ -75,7 +75,7 @@ export const Navbar = () => {
           onClick={() => {
             const link = document.createElement("a");
             link.href = "/src/assets/documentos/ABRAHAM MANUEL HILARIO FERNÁNDEZ.pdf"; 
-            link.download = "CV_Abraham_Manuel_Hilario_Fernández.pdf";   // Nombre con el que se descargará
+            link.download = "CV_Abraham_Manuel_Hilario_Fernández.pdf";
             link.click();
           }}
           className="items-center flex-shrink-0 hidden gap-2 px-3 py-2 transition-transform duration-300 border-2 cursor-pointer xl:gap-3 xl:px-4 2xl:px-5 lg:flex rounded-3xl hover:bg-green-500 hover:scale-105 whitespace-nowrap"
@@ -108,9 +108,17 @@ export const Navbar = () => {
 
             {/* Botón CV móvil */}
             <li>
-              <div className="flex items-center justify-center gap-2 px-5 py-2 mx-auto mt-2 transition duration-300 border-2 cursor-pointer rounded-3xl hover:bg-green-500 max-w-fit">
-                <IoMdDownload className="w-5 h-5" /> {/* 👈 Ícono de descarga */}
-                <button>Download CV</button>
+              <div
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/src/assets/documentos/ABRAHAM MANUEL HILARIO FERNÁNDEZ.pdf";
+                  link.download = "CV_Abraham_Manuel_Hilario_Fernández.pdf";
+                  link.click();
+                }}
+                className="flex items-center justify-center gap-2 px-5 py-2 mx-auto mt-2 transition duration-300 border-2 cursor-pointer rounded-3xl hover:bg-green-500 max-w-fit"
+              >
+                <IoMdDownload className="w-5 h-5" />
+                <span>Download CV</span>
               </div>
             </li>
           </ul>

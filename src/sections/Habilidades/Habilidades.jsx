@@ -52,7 +52,7 @@ export const Habilidades = () => {
         </div>
 
         {/* Listado de Skills */}
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] gap-6 mt-10 justify-items-center place-items-center">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] gap-10 mt-10 justify-items-center place-items-center">
           {skillsFiltradas.map((skill) => (
             <SkillCard
               key={skill.id}
