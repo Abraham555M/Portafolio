@@ -19,7 +19,7 @@ export const SobreMi = () => {
   };
 
   return (
-    <section id="sobre-mi" className="p-6 text-white border md:p-20">
+    <section id="sobre-mi" className="p-6 text-white md:p-20">
       <div className="max-w-[1200px] mx-auto">
         {/* Título */}
         <div className='py-3 m-auto space-y-5 text-center'>

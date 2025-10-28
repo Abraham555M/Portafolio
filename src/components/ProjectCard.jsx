@@ -6,11 +6,13 @@ const ProjectCard = ({ imagen, imagen2, titulo, descipcion, enlace, tecnologias 
 
   return (
     <div
-      className="max-w-md h-[450px] p-5 text-white transition-transform duration-300 transform rounded-2xl
-                 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:scale-100"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+  className="max-w-md h-[450px] p-5 text-white transform scale-100 transition-transform duration-300 rounded-2xl
+             bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:scale-105 hover:-translate-y-1"
+  onMouseEnter={() => setHovered(true)}
+  onMouseLeave={() => setHovered(false)}
+>
+
+
       {/* Contenedor de imágenes */}
       <div className="relative h-48 overflow-hidden rounded-xl">
         {/* Imagen 1 */}

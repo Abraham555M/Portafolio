@@ -4,16 +4,23 @@ import SocialCard from "../../components/SocialCard";
 
 export const Contacto = () => {
   return (
-    <section id="contacto" className="p-6 text-white md:p-20">
-      <div className="max-w-[1200px] mx-auto space-y-10">
-        {/* Título */}
-        <div className="py-3 space-y-10 text-center">
-          <h1 className="text-3xl font-bold md:text-5xl">Contact</h1>
+    <section
+      id="contacto"
+      className="px-6 py-16 text-white md:px-20 lg:py-24"
+    >
+      <div className="max-w-[1300px] mx-auto space-y-14 border">
+        {/* 🧭 Título */}
+        <div className="space-y-3 text-center">
+          <h1 className="text-3xl font-bold md:text-5xl">Contacto</h1>
+          <p className="text-gray-400 text-sm md:text-base max-w-[600px] mx-auto">
+            Conecta conmigo a través de mis redes o envíame un mensaje directo.
+          </p>
         </div>
 
-        <div className="flex flex-col gap-10 lg:flex-row">
+        {/* 🔄 Contenedor Principal */}
+        <div className="flex flex-col gap-10 border lg:flex-row lg:justify-between">
           {/* 📌 Columna Izquierda - Redes Sociales */}
-          <div className="flex flex-col w-full gap-6">
+          <div className="flex flex-col w-full gap-6 border lg:w-1/2">
             {sociales.map((item) => (
               <SocialCard
                 key={item.id}
@@ -25,56 +32,49 @@ export const Contacto = () => {
           </div>
 
           {/* 📨 Columna Derecha - Formulario */}
-          <div className="flex flex-col w-full p-6 border rounded-2xl bg-white/10 backdrop-blur-sm">
-            <h2 className="mb-4 text-2xl font-bold text-center lg:text-left">
-              ¡Envíame un mensaje! 📩
+          <div className="flex flex-col w-full lg:w-1/2 p-8 text-white transition-transform duration-300 transform rounded-2xl
+                          bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:scale-[1.02] hover:-translate-y-1">
+            <h2 className="mb-6 text-2xl font-bold text-center lg:text-left">
+              Send Me a Message
             </h2>
-            <form className="flex flex-col gap-4">
+
+            <form className="flex flex-col gap-5">
               {/* Nombre */}
               <div className="flex flex-col">
-                <label htmlFor="nombre" className="mb-1 text-sm font-semibold">
-                  Nombre
-                </label>
                 <input
                   type="text"
                   id="nombre"
-                  placeholder="Tu nombre"
-                  className="p-2 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  placeholder="Your Name"
+                  className="p-2 text-sm text-white placeholder-gray-400 border rounded-lg bg-black/30 border-white/20 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
                 />
               </div>
 
               {/* Email */}
               <div className="flex flex-col">
-                <label htmlFor="email" className="mb-1 text-sm font-semibold">
-                  Email
-                </label>
                 <input
                   type="email"
                   id="email"
-                  placeholder="tucorreo@mail.com"
-                  className="p-2 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  placeholder="Your Email"
+                  className="p-2 text-sm text-white placeholder-gray-400 border rounded-lg bg-black/30 border-white/20 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
                 />
               </div>
 
               {/* Mensaje */}
               <div className="flex flex-col">
-                <label htmlFor="mensaje" className="mb-1 text-sm font-semibold">
-                  Mensaje
-                </label>
                 <textarea
                   id="mensaje"
                   rows="4"
-                  placeholder="Escribe tu mensaje..."
-                  className="p-2 text-black rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  placeholder="Your Message"
+                  className="p-2 text-sm text-white placeholder-gray-400 border rounded-lg resize-none bg-black/30 border-white/20 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
                 ></textarea>
               </div>
 
               {/* Botón */}
               <button
                 type="submit"
-                className="px-4 py-2 mt-2 font-semibold text-black transition-all rounded-lg bg-amber-400 hover:bg-amber-500"
+                className="px-4 py-2 mt-2 font-semibold text-black transition-all rounded-lg bg-amber-400 hover:bg-amber-500 hover:scale-105 focus:ring-2 focus:ring-amber-300"
               >
-                Enviar
+                Send
               </button>
             </form>
           </div>

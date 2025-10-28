@@ -5,18 +5,18 @@ export const sociales = [
         id: 1,
         nombre: "GitHub",
         icono: <FaGithub></FaGithub> ,
-        mensaje: "Mensaje nuevo"
+        mensaje: "Explore my code & projects"
     },
     {
         id: 2,
         nombre: "Linkedin",
         icono: <FaLinkedin></FaLinkedin > ,
-        mensaje: "Mensaje nuevo"
+        mensaje: "Let's connect profesionally"
     },
     {
         id: 3,
         nombre: "Instagram",
         icono: <FaInstagram></FaInstagram > ,
-        mensaje: "Mensaje nuevo"
+        mensaje: "My visual journal & life updates"
     }  
 ]
