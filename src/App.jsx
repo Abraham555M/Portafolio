@@ -33,14 +33,14 @@ export const App = () => {
   };
 
   return (
-    <>
-      <Navbar/>
-      <Inicio/>
-      <SobreMi/>
-      <Proyectos/>
-      <Habilidades/>
-      <Experiencia/>
-      <Contacto/>
+     <div className="overflow-x-hidden">
+      <Navbar />
+      <Inicio />
+      <SobreMi />
+      <Proyectos />
+      <Habilidades />
+      <Experiencia />
+      <Contacto />
 
      {/* Flotante Global */}
       {showButton && (
@@ -51,6 +51,6 @@ export const App = () => {
           <FaArrowUp />
         </button>
       )}
-    </>
+    </div>
   );
 }
