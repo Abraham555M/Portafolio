@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 const SkillCard = ({ nombre, icono }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.1, y: -8 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="relative flex flex-col items-center justify-center p-5 text-white transition-all duration-500 border shadow-xl group w-36 h-44 rounded-2xl backdrop-blur-lg bg-gradient-to-br from-slate-800/95 to-slate-900/95 border-slate-700/50 hover:border-green-500/60 hover:shadow-green-500/30 hover:shadow-2xl before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-green-500/0 before:to-green-500/0 hover:before:from-green-500/10 hover:before:to-green-500/10 before:transition-all before:duration-500"
