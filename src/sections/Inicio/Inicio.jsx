@@ -27,7 +27,7 @@ export const Inicio = () => {
           transition={{ duration: 0.8 }}
           className="w-full"
         >
-          <h1 className="text-lg font-bold sm:text-2xl">HELLO I'M</h1>
+          <h1 className="text-lg font-bold text-green-500 sm:text-2xl">HELLO I'M</h1>
           <h2 className="mt-5 mb-2 text-2xl font-bold leading-tight break-words sm:text-3xl md:text-4xl lg:text-5xl">
             <span className="block">Abraham Manuel</span>
             <span className="flex flex-wrap items-center justify-center gap-2 mt-2 lg:justify-start">
