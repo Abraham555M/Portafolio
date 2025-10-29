@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FaReact, FaLaravel, FaAndroid } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import TypedText from "../../components/TypedText";
@@ -6,39 +6,27 @@ import { MdWavingHand } from "react-icons/md";
 import { stats } from "../../data/StatsData";
 import foto from "../../assets/usuario.jpg";
 import { IconosInicio } from "../../components/IconosInicio";
-import { useInView } from "react-intersection-observer";
 
 export const Inicio = () => {
   const { scrollYProgress } = useScroll();
-
-  // 🌀 Suavizamos el scroll para que no se recalculen los valores en cada frame
-  const smoothScroll = useSpring(scrollYProgress, { stiffness: 100, damping: 20 });
-
-  // 🎨 Transformaciones suaves para la imagen
-  const imageOpacity = useTransform(smoothScroll, [0, 0.3], [1, 0]);
-  const imageScale = useTransform(smoothScroll, [0, 0.3], [1, 0.8]);
-  const imageY = useTransform(smoothScroll, [0, 0.5], [0, 300]);
-
-  // 👁️ Solo aplicamos animaciones de scroll si la sección está visible
-  const { ref, inView } = useInView({ threshold: 0.25 });
+  const imageOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const imageScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.8]);
+  const imageY = useTransform(scrollYProgress, [0, 0.5], [0, 300]);
 
   return (
     <section
       id="home"
-      ref={ref}
       className="p-6 text-white border md:p-20"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col-reverse items-center justify-center w-full min-h-screen py-10 md:py-20 lg:flex-row lg:justify-between lg:items-center lg:gap-10">
-
+        
         {/* Contenido izquierdo */}
         <div className="w-full lg:w-[55%] flex flex-col justify-center gap-8 md:gap-12 text-center lg:text-left px-2 sm:px-0">
-          
           {/* Nombre */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
             className="w-full"
           >
             <h1 className="text-lg font-bold text-green-500 sm:text-2xl">HELLO I'M</h1>
@@ -55,25 +43,10 @@ export const Inicio = () => {
           </motion.div>
 
           {/* Estadísticas */}
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-              hidden: { opacity: 0, y: 40 },
-              show: {
-                opacity: 1,
-                y: 0,
-                transition: { staggerChildren: 0.1, duration: 0.6 },
-              },
-            }}
-            className="w-full"
-          >
+          <div className="w-full">
             <motion.h2
-              variants={{
-                hidden: { opacity: 0, x: -50 },
-                show: { opacity: 1, x: 0 },
-              }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-6 text-2xl font-bold text-transparent bg-gradient-to-r from-green-400 to-green-500 bg-clip-text"
             >
@@ -84,10 +57,8 @@ export const Inicio = () => {
               {stats.map((item) => (
                 <motion.div
                   key={item.id}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    show: { opacity: 1, y: 0 },
-                  }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   whileHover={{ scale: 1.08, y: -4 }}
                   whileTap={{ scale: 0.95 }}
                   className="group relative flex flex-col items-center p-3 sm:p-4 w-[110px] sm:w-[130px] font-medium text-center text-white rounded-2xl
@@ -125,14 +96,13 @@ export const Inicio = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Contacto */}
           <motion.div
             className="flex flex-col w-full gap-2 font-mono text-center lg:text-left"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <h1 className="text-base font-semibold text-green-500 underline break-words sm:text-lg lg:text-xl xl:text-2xl overflow-wrap-anywhere">
@@ -148,11 +118,9 @@ export const Inicio = () => {
         <motion.div
           className="relative justify-center items-center w-full max-w-[400px] aspect-square mx-auto mb-10 lg:mb-0 hidden sm:flex"
           style={{
-            opacity: inView ? imageOpacity : 1,
-            scale: inView ? imageScale : 1,
-            y: inView ? imageY : 0,
-            willChange: "transform, opacity",
-            transform: "translateZ(0)"
+            opacity: imageOpacity,
+            scale: imageScale,
+            y: imageY,
           }}
         >
           <div className="z-10 w-64 h-64 overflow-hidden border-4 border-white rounded-full shadow-lg sm:w-72 sm:h-72 lg:w-80 lg:h-80">
@@ -172,6 +140,7 @@ export const Inicio = () => {
             <SiMysql className="text-xl text-black sm:text-2xl" />
           </IconosInicio>
         </motion.div>
+
       </div>
     </section>
   );

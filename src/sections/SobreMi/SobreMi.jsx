@@ -1,43 +1,96 @@
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import { imagenes } from "../../data/ImagenesData";
 import { infos } from "../../data/InfoData";
 import { FaExclamationCircle } from 'react-icons/fa';
 import { AiFillBell } from 'react-icons/ai';
 
 export const SobreMi = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
   const [frontIndex, setFrontIndex] = useState(0);
 
   const handleClick = () => {
     setFrontIndex((prev) => (prev + 1) % imagenes.length);
   };
 
+  // Animación simple para el título
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
+  // Animación para la imagen (desde la izquierda)
+  const imageVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  // Animación para el contenido (desde la derecha)
+  const contentVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
+    }
+  };
+
+  // Stagger para las secciones de info
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" }
+    }
+  };
+
   return (
-    <section ref={sectionRef} id="sobre-mi" className="p-6 text-white border md:p-20">
+    <section id="sobre-mi" className="p-6 text-white md:p-20">
       <div className="max-w-[1200px] mx-auto">
-        {/* 🔹 Título */}
+        {/* Título */}
         <motion.div
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           className='py-3 m-auto space-y-5 text-center'
-          initial={{ opacity: 0, y: -50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className='text-3xl font-bold md:text-5xl'>About me</h1>
+          <h1 className='text-3xl font-bold text-transparent md:text-5xl bg-gradient-to-r from-green-400 to-green-300 bg-clip-text'>
+            About me
+          </h1>
           <p className='font-semibold text-gray-400 text-md md:text-lg'>
             Discover my journey, passions and the story behind my work
           </p>
         </motion.div>
 
         <div className='flex flex-col gap-10 mt-10 lg:flex-row'>
-          {/* 🔹 Imagen con entrada desde la izquierda */}
+          {/* Imagen con entrada desde la izquierda */}
           <motion.div
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
             className="relative flex justify-center mx-auto mt-10 cursor-pointer lg:w-1/2 min-h-[25rem] sm:min-h-[24rem] md:min-h-[28rem]"
             onClick={handleClick}
-            initial={{ opacity: 0, x: -100, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: -100, scale: 0.9 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
           >
             {imagenes.map((imagen, index) => {
               const relativeIndex = (index - frontIndex + imagenes.length) % imagenes.length;
@@ -64,35 +117,27 @@ export const SobreMi = () => {
             })}
           </motion.div>
 
-          {/* 🔹 Información con entrada desde la derecha */}
+          {/* Información con entrada desde la derecha */}
           <motion.div
+            variants={contentVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
             className="space-y-4 max-w-[48em] w-full mx-auto"
-            initial={{ opacity: 0, x: 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
           >
-            {/* Primer Nivel */}
+            {/* Primer Nivel - Cards Who Am I y My Approach */}
             <motion.div
+              variants={sectionVariants}
               className="flex flex-col gap-4 md:flex-row"
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
             >
               <motion.div 
-                className="flex-1 px-4 py-4 space-y-4 md:px-6"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                variants={itemVariants}
+                className="flex-1 px-4 py-4 space-y-4 transition-colors duration-300 border md:px-6 bg-slate-800/30 rounded-xl backdrop-blur-sm border-slate-700/50 hover:border-green-500/30"
               >
                 <div className="flex items-center gap-2 font-extrabold">
-                  <motion.div 
-                    className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit"
-                    initial={{ rotate: -180, scale: 0 }}
-                    animate={isInView ? { rotate: 0, scale: 1 } : { rotate: -180, scale: 0 }}
-                    transition={{ duration: 0.6, delay: 0.7, type: "spring", stiffness: 200 }}
-                  >
+                  <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit">
                     <FaExclamationCircle className="text-xl" />
-                  </motion.div>
+                  </div>
                   <h1 className="text-2xl text-white">Who Am I</h1>
                 </div>
                 <p className="font-semibold text-gray-400">
@@ -101,20 +146,13 @@ export const SobreMi = () => {
               </motion.div>
 
               <motion.div 
-                className="flex-1 px-4 py-4 space-y-4 md:px-6"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
+                variants={itemVariants}
+                className="flex-1 px-4 py-4 space-y-4 transition-colors duration-300 border md:px-6 bg-slate-800/30 rounded-xl backdrop-blur-sm border-slate-700/50 hover:border-green-500/30"
               >
                 <div className="flex flex-wrap items-center gap-2 font-extrabold">
-                  <motion.div 
-                    className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit shrink-0"
-                    initial={{ rotate: -180, scale: 0 }}
-                    animate={isInView ? { rotate: 0, scale: 1 } : { rotate: -180, scale: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8, type: "spring", stiffness: 200 }}
-                  >
+                  <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit shrink-0">
                     <FaExclamationCircle className="text-xl" />
-                  </motion.div>
+                  </div>
                   <h1 className="text-2xl text-white break-words">My Approach</h1>
                 </div>
                 <p className="font-semibold text-gray-400">
@@ -123,42 +161,27 @@ export const SobreMi = () => {
               </motion.div>
             </motion.div>
 
-            {/* Segundo Nivel */}
+            {/* Segundo Nivel - Personal Info */}
             <motion.div
-              className="flex flex-col gap-4 m-4"
-              initial={{ opacity: 0, y: 60 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              variants={itemVariants}
+              className="flex flex-col gap-4 p-4 transition-colors duration-300 border bg-slate-800/30 rounded-xl backdrop-blur-sm border-slate-700/50 hover:border-green-500/30"
             >
-            <div className="flex flex-wrap items-center gap-2 font-extrabold">
-              <motion.div 
-                className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit shrink-0"
-                initial={{ rotate: -180, scale: 0 }}
-                animate={isInView ? { rotate: 0, scale: 1 } : { rotate: -180, scale: 0 }}
-                transition={{ duration: 0.6, delay: 0.9, type: "spring", stiffness: 200 }}
-              >
-                <AiFillBell className="text-xl" />
-              </motion.div>
-              <h1 className="text-2xl text-white break-words">Personal Info</h1>
-            </div>
+              <div className="flex flex-wrap items-center gap-2 font-extrabold">
+                <div className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit shrink-0">
+                  <AiFillBell className="text-xl" />
+                </div>
+                <h1 className="text-2xl text-white break-words">Personal Info</h1>
+              </div>
             
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                {infos.map((item, index) => (
-                  <motion.div
+                {infos.map((item) => (
+                  <div
                     key={item.id}
-                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                    animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
-                    transition={{ duration: 0.5, delay: 1.0 + (index * 0.1) }}
-                    className="flex flex-col gap-3 sm:flex-row sm:items-start"
+                    className="flex flex-col gap-3 sm:flex-row sm:items-start group"
                   >
-                    <motion.div 
-                      className="flex items-center justify-center p-2 text-black bg-white rounded-lg w-fit shrink-0"
-                      initial={{ rotate: -180, scale: 0 }}
-                      animate={isInView ? { rotate: 0, scale: 1 } : { rotate: -180, scale: 0 }}
-                      transition={{ duration: 0.5, delay: 1.1 + (index * 0.1), type: "spring", stiffness: 200 }}
-                    >
+                    <div className="flex items-center justify-center p-2 text-black transition-transform duration-200 bg-white rounded-lg w-fit shrink-0 group-hover:scale-110">
                       {item.icon}
-                    </motion.div>
+                    </div>
                     <div className="flex flex-col">
                       <p className="leading-snug text-gray-300 break-words">
                         <span className="font-bold text-white whitespace-pre-wrap">
@@ -167,7 +190,7 @@ export const SobreMi = () => {
                         {item.label.split(':')[1]}
                       </p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </motion.div>

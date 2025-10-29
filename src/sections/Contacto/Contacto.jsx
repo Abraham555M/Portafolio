@@ -20,51 +20,59 @@ export const Contacto = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para enviar el formulario
     console.log("Form submitted:", formData);
   };
 
-  // Variantes de animación
+  // Animación simple para el título
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
+  // Stagger para redes sociales
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.1,
+        delayChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
+    hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
+      transition: { duration: 0.4, ease: "easeOut" }
+    }
+  };
+
+  // Animación para formulario
+  const formVariants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, ease: "easeOut", delay: 0.3 }
     }
   };
 
   return (
-    <section
-      id="contacto"
-      className="p-6 text-white md:p-20"
-    >
-      <motion.div 
-        className="max-w-[1200px] mx-auto"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.5 }}
-      >
+    <section id="contacto" className="p-6 text-white md:p-20">
+      <div className="max-w-[1200px] mx-auto">
+        {/* Título */}
         <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           className='mb-12 text-3xl font-bold text-center text-transparent md:text-5xl bg-gradient-to-r from-green-400 to-green-300 bg-clip-text'
         >
           Contact
@@ -76,7 +84,7 @@ export const Contacto = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="space-y-4"
           >
             {sociales.map((social) => (
@@ -86,24 +94,18 @@ export const Contacto = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={itemVariants}
-                whileHover={{ scale: 1.02, x: 5 }}
-                whileTap={{ scale: 0.98 }}
-                className="relative flex items-center justify-between p-6 overflow-hidden transition-all duration-500 border shadow-xl group rounded-2xl backdrop-blur-lg bg-gradient-to-br from-slate-800/95 to-slate-900/95 border-slate-700/50 hover:border-green-500/60 hover:shadow-green-500/20 hover:shadow-2xl before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-green-500/0 before:to-green-500/0 hover:before:from-green-500/10 hover:before:to-green-500/10 before:transition-all before:duration-500"
+                className="relative flex items-center justify-between p-6 overflow-hidden transition-all duration-300 border shadow-xl group rounded-2xl backdrop-blur-lg bg-gradient-to-br from-slate-800/95 to-slate-900/95 border-slate-700/50 hover:border-green-500/60 hover:shadow-green-500/20 hover:shadow-2xl hover:translate-x-1"
               >
                 {/* Brillo decorativo */}
-                <div className="absolute top-0 right-0 w-32 h-32 transition-all duration-500 rounded-full bg-gradient-to-br from-green-400/0 to-transparent blur-2xl group-hover:from-green-400/20"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 transition-opacity duration-300 rounded-full opacity-0 bg-gradient-to-br from-green-400/20 to-transparent blur-2xl group-hover:opacity-100"></div>
 
                 <div className="relative z-10 flex items-center gap-4">
                   {/* Icono */}
-                  <div className="relative flex items-center justify-center flex-shrink-0 w-16 h-16 transition-all duration-300 border shadow-lg rounded-2xl bg-gradient-to-br from-slate-700/90 to-slate-800/90 border-slate-600/50 group-hover:border-green-500/60 group-hover:shadow-green-500/30">
-                    <div className="absolute inset-0 transition-all duration-500 rounded-2xl bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/20 group-hover:to-green-500/20"></div>
-                    <motion.div
-                      whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
-                      transition={{ duration: 0.5 }}
-                      className="relative z-10 text-3xl text-green-400 transition-colors duration-300 group-hover:text-green-300"
-                    >
+                  <div className="relative flex items-center justify-center flex-shrink-0 w-16 h-16 transition-all duration-300 border shadow-lg rounded-2xl bg-gradient-to-br from-slate-700/90 to-slate-800/90 border-slate-600/50 group-hover:border-green-500/60 group-hover:shadow-green-500/30 group-hover:scale-110">
+                    <div className="absolute inset-0 transition-opacity duration-300 opacity-0 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-500/20 group-hover:opacity-100"></div>
+                    <div className="relative z-10 text-3xl text-green-400 transition-colors duration-300 group-hover:text-green-300">
                       {social.icono}
-                    </motion.div>
+                    </div>
                   </div>
 
                   {/* Texto */}
@@ -118,26 +120,23 @@ export const Contacto = () => {
                 </div>
 
                 {/* Flecha */}
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  className="relative z-10 transition-all duration-300 text-slate-400 group-hover:text-green-400"
-                >
+                <div className="relative z-10 transition-all duration-300 text-slate-400 group-hover:text-green-400 group-hover:translate-x-1">
                   <FiChevronRight className="text-2xl" />
-                </motion.div>
+                </div>
 
                 {/* Línea decorativa inferior */}
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-green-400 group-hover:w-full transition-all duration-500 rounded-full z-10"></div>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-green-400 group-hover:w-full transition-all duration-300 rounded-full z-10"></div>
               </motion.a>
             ))}
           </motion.div>
 
           {/* Columna derecha - Formulario */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="relative p-8 overflow-hidden transition-all duration-500 border shadow-xl rounded-2xl backdrop-blur-lg bg-gradient-to-br from-slate-800/95 to-slate-900/95 border-slate-700/50 hover:border-green-500/60 hover:shadow-green-500/20 hover:shadow-2xl"
+            variants={formVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="relative p-8 overflow-hidden transition-all duration-300 border shadow-xl rounded-2xl backdrop-blur-lg bg-gradient-to-br from-slate-800/95 to-slate-900/95 border-slate-700/50 hover:border-green-500/60 hover:shadow-green-500/20 hover:shadow-2xl"
           >
             {/* Brillo decorativo */}
             <div className="absolute top-0 right-0 w-40 h-40 transition-all duration-500 rounded-full bg-gradient-to-br from-green-400/10 to-transparent blur-3xl"></div>
@@ -195,22 +194,21 @@ export const Contacto = () => {
                 </div>
 
                 {/* Botón de envío */}
-                <motion.button
+                <button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="relative w-full py-4 overflow-hidden font-semibold text-white transition-all duration-500 border shadow-xl group rounded-xl bg-gradient-to-br from-slate-700/90 to-slate-800/90 border-slate-600/50 hover:border-green-500/60 hover:shadow-green-500/30 hover:shadow-2xl before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-green-500/0 before:to-green-500/0 hover:before:from-green-500/20 hover:before:to-green-500/20 before:transition-all before:duration-500"
+                  className="relative w-full py-4 overflow-hidden font-semibold text-white transition-all duration-300 border shadow-xl group rounded-xl bg-gradient-to-br from-slate-700/90 to-slate-800/90 border-slate-600/50 hover:border-green-500/60 hover:shadow-green-500/30 hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
                 >
+                  <div className="absolute inset-0 transition-opacity duration-300 opacity-0 rounded-xl bg-gradient-to-br from-green-500/20 to-green-500/20 group-hover:opacity-100"></div>
                   <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover:text-green-300">
                     Send
                     <FiSend className="text-xl transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
-                </motion.button>
+                </button>
               </form>
             </div>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
