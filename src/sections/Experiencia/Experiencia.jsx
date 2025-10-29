@@ -44,11 +44,17 @@ export const Experiencia = () => {
 
   return (
     <section id="experiencia" className="p-6 text-white md:p-20">     
-      <div className="max-w-[1200px] mx-auto">
+      <motion.div 
+        className="max-w-[1200px] mx-auto"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.5 }}
+      >
         <motion.h1 
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.6 }}
           className='mb-12 text-3xl font-bold text-center text-transparent md:text-5xl bg-gradient-to-r from-green-400 to-green-300 bg-clip-text'
         >
@@ -59,7 +65,7 @@ export const Experiencia = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px", amount: 0.1 }}
           className="space-y-6"
         >
           {experiences.map((exp, index) => (
@@ -93,7 +99,7 @@ export const Experiencia = () => {
                   <motion.div 
                     initial={{ height: 0 }}
                     whileInView={{ height: "100%" }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="w-0.5 bg-gradient-to-b from-green-500/50 to-slate-700/50 flex-grow mt-2"
                   />
@@ -147,7 +153,7 @@ export const Experiencia = () => {
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   )
 }
