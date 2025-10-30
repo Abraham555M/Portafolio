@@ -16,10 +16,9 @@ export const Inicio = () => {
   return (
     <section
       id="home"
-      className="p-6 text-white border md:p-20"
+      className="p-6 text-white md:p-20"
     >
-      <div className="max-w-[1200px] mx-auto flex flex-col-reverse items-center justify-center w-full min-h-screen py-10 md:py-20 lg:flex-row lg:justify-between lg:items-center lg:gap-10">
-        
+      <div className="max-w-[1200px] mx-auto flex flex-col-reverse items-center justify-center w-full min-h-[75vh] py-10 md:py-16 lg:flex-row lg:justify-between lg:items-center lg:gap-10">  
         {/* Contenido izquierdo */}
         <div className="w-full lg:w-[55%] flex flex-col justify-center gap-8 md:gap-12 text-center lg:text-left px-2 sm:px-0">
           {/* Nombre */}

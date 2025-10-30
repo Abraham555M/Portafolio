@@ -25,3 +25,24 @@ html {
   width: 1ch;
   animation: blink 1s step-start infinite;
 }
+
+
+/* ==== Scrollbar personalizado ==== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.4); /* slate-800 */
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(74,222,128,0.4), rgba(16,185,129,0.4));
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(74,222,128,0.7), rgba(16,185,129,0.7));
+}

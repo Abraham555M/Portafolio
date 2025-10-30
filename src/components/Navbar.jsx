@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoMdDownload } from "react-icons/io";
+import logo from "../assets/logo_3.png"
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,9 +10,11 @@ export const Navbar = () => {
       <div className="flex items-center justify-between px-4 py-3 md:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex-shrink-0 cursor-pointer w-28 sm:w-32 md:w-36">
-          <div className="text-2xl font-bold text-green-500">
-            CODE LOGO
-          </div>
+          <img
+            src={logo}
+            alt="Logo"
+            className="object-contain h-auto w-200"
+          />
         </div>
 
         {/* Botón hamburguesa (solo móvil) */}

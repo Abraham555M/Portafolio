@@ -13,7 +13,7 @@ export const sociales = [
         nombre: "Linkedin",
         icono: <FaLinkedin></FaLinkedin > ,
         mensaje: "Let's connect profesionally",
-        enlace: "linkedin.com/in/abraham-manuel-hilario-fernández-a04731282"
+        enlace: "https://www.linkedin.com/in/abraham-manuel-hilario-fern%C3%A1ndez-a04731282/"
     },
     {
         id: 3,

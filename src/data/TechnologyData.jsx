@@ -1,5 +1,8 @@
-import { FaCss3Alt, FaHtml5, FaJs, FaLaravel, FaReact } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
+import { FaCss3Alt, FaHtml5, FaJava, FaJs, FaLaravel, FaPhp, FaReact } from "react-icons/fa";
+import { GrMysql } from "react-icons/gr";
+import { IoLogoAndroid, IoLogoJavascript } from "react-icons/io";
+import { IoLogoFirebase } from "react-icons/io5";
+import { LuCodeXml } from "react-icons/lu";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiMysql, SiPostman } from "react-icons/si";
 
@@ -31,16 +34,15 @@ export const proyectos = [
   {
     imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
     imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
-    titulo: "Marcado de Asistencia",
-    descipcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    titulo: "Aplicación móvil para la gestión de gastos personales" ,
+    descipcion: "Aplicación móvil diseñada para facilitar la gestión y control de los gastos personales, permitiendo al usuario registrar sus movimientos financieros, analizar sus hábitos de consumo y optimizar la administración de sus recursos económicos de forma sencilla e intuitiva.",
     enlace: "https://github.com/otro-proyecto",
     tecnologias: [
-      { nombre: "Laravel", icono: <FaLaravel /> },
-      { nombre: "React", icono: <FaReact /> },
-      { nombre: "Tailwind", icono: <RiTailwindCssFill /> },
-      { nombre: "React", icono: <FaReact /> },
-      { nombre: "Postman", icono: <SiPostman /> },
-      { nombre: "Javascript", icono: <IoLogoJavascript /> }
+      { nombre: "Android", icono: <IoLogoAndroid /> },
+      { nombre: "PHP", icono: <FaPhp /> },
+      { nombre: "Firebase", icono: <IoLogoFirebase /> },
+      { nombre: "MySQL", icono: <GrMysql /> },
+      { nombre: "Java", icono: <FaJava /> },
     ]
   },
   {
