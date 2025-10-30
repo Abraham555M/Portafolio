@@ -7,14 +7,12 @@ import { motion, AnimatePresence, useSpring } from "framer-motion";
 export const Habilidades = () => {
   const [tipoSeleccionado, setTipoSeleccionado] = useState(null);
 
-  // ✅ useMemo para evitar recalcular el filtrado en cada render
   const skillsFiltradas = useMemo(() => {
     return tipoSeleccionado
       ? skills.filter((skill) => skill.tipo === tipoSeleccionado)
       : skills;
   }, [tipoSeleccionado]);
 
-  // Variantes optimizadas
   const categoriesBarVariants = {
     hidden: { opacity: 0, y: 15 },
     visible: {
@@ -48,7 +46,6 @@ export const Habilidades = () => {
     exit: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } },
   };
 
-  // 🌀 Pequeño spring para suavizar la transición al cambiar de categoría
   const smoothTransition = useSpring(tipoSeleccionado, {
     stiffness: 80,
     damping: 15,
@@ -57,7 +54,7 @@ export const Habilidades = () => {
   return (
     <section
       id="habilidades"
-      className="p-6 text-white border md:p-20 will-change-transform"
+      className="p-6 text-white md:p-20 will-change-transform"
       style={{ transform: "translateZ(0)" }}
     >
       <div className="max-w-[1200px] mx-auto">

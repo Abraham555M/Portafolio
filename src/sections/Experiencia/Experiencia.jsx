@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { experiences } from '../../data/ExperienceData'
 
 export const Experiencia = () => {
-  // Animación suave para el título
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -15,7 +14,6 @@ export const Experiencia = () => {
     }
   }
 
-  // Animación escalonada para los items
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

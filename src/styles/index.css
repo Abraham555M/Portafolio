@@ -33,7 +33,11 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(30, 41, 59, 0.4); /* slate-800 */
+  background: linear-gradient(
+    180deg,
+    #1e293b 0%,
+    #0f1729 100%
+  ); /* Azul oscuro a negro */
   border-radius: 100px;
 }
 
@@ -46,3 +50,4 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, rgba(74,222,128,0.7), rgba(16,185,129,0.7));
 }
+

@@ -1,10 +1,11 @@
 import { FaCss3Alt, FaHtml5, FaJava, FaJs, FaLaravel, FaPhp, FaReact } from "react-icons/fa";
+import { FaFigma } from "react-icons/fa6";
 import { GrMysql } from "react-icons/gr";
 import { IoLogoAndroid, IoLogoJavascript } from "react-icons/io";
 import { IoLogoFirebase } from "react-icons/io5";
 import { LuCodeXml } from "react-icons/lu";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiMysql, SiPostman } from "react-icons/si";
+import { SiGooglecloud, SiMysql, SiPostman, SiSpring, SiVite } from "react-icons/si";
 
 export const proyectos = [
   {
@@ -20,23 +21,26 @@ export const proyectos = [
     ]
   },
   {
-    imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
-    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
-    titulo: "Landing Page",
-    descipcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-    enlace: "https://github.com/otro-proyecto",
+    imagen: "https://i.ibb.co/35KfW128/Captura-de-pantalla-2025-10-30-122744.png",
+    imagen2: "https://i.ibb.co/ycZq8xRR/Captura-de-pantalla-2025-10-30-122912.png",
+    titulo: "Plataforma administrativa del albergue San Francisco",
+    descipcion: "Un sistema web diseñado para optimizar la administración de un albergue, permitiendo gestionar de manera eficiente los registros de animales, adopciones, personal y recursos, todo desde una interfaz centralizada y fácil de usar.",
+    enlace: "https://github.com/Abraham555M/frontend_adprso.git",
     tecnologias: [
-      { nombre: "HTML", icono: <FaHtml5 /> },
-      { nombre: "CSS", icono: <FaCss3Alt /> },
-      { nombre: "JavaScript", icono: <FaJs /> }
+      { nombre: "React", icono: <FaReact /> },
+      { nombre: "Spring Boot", icono: <SiSpring /> },
+      { nombre: "MySQL", icono: <GrMysql /> },
+      { nombre: "Tailwind", icono: <RiTailwindCssFill /> },
+      { nombre: "Figma", icono: <FaFigma /> },
+      { nombre: "Vite", icono: <SiVite /> }
     ]
   },
   {
-    imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
-    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
+    imagen: "https://i.ibb.co/nMDkkCMM/Captura-de-pantalla-2025-10-30-111323.png",
+    imagen2: "https://i.ibb.co/4np7LDCP/Captura-de-pantalla-2025-10-30-111457.png",
     titulo: "Aplicación móvil para la gestión de gastos personales" ,
     descipcion: "Aplicación móvil diseñada para facilitar la gestión y control de los gastos personales, permitiendo al usuario registrar sus movimientos financieros, analizar sus hábitos de consumo y optimizar la administración de sus recursos económicos de forma sencilla e intuitiva.",
-    enlace: "https://github.com/otro-proyecto",
+    enlace: "https://github.com/Manuelh2004/PHP_PROYECTO_MOVILES.git",
     tecnologias: [
       { nombre: "Android", icono: <IoLogoAndroid /> },
       { nombre: "PHP", icono: <FaPhp /> },
@@ -54,25 +58,22 @@ export const proyectos = [
     tecnologias: [
       { nombre: "Laravel", icono: <FaLaravel /> },
       { nombre: "React", icono: <FaReact /> },
-      { nombre: "Tailwind", icono: <RiTailwindCssFill /> },
-      { nombre: "React", icono: <FaReact /> },
-      { nombre: "Postman", icono: <SiPostman /> },
-      { nombre: "Javascript", icono: <IoLogoJavascript /> }
+      { nombre: "Tailwind", icono: <RiTailwindCssFill /> }
+   
     ]
   },
   {
-    imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
-    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
-    titulo: "Marcado de Asistencia",
+    imagen: "https://i.ibb.co/LDPcP8kB/Captura-de-pantalla-2025-10-30-171058.png",
+    imagen2: "https://i.ibb.co/NdszVjyR/Captura-de-pantalla-2025-10-30-171218.png",
+    titulo: "Aplicación móvil para la gestión de pedidos",
     descipcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    enlace: "https://github.com/otro-proyecto",
+    enlace: "https://github.com/Abraham555M/ProyectoLaGranja.git",
     tecnologias: [
-      { nombre: "Laravel", icono: <FaLaravel /> },
-      { nombre: "React", icono: <FaReact /> },
-      { nombre: "Tailwind", icono: <RiTailwindCssFill /> },
-      { nombre: "React", icono: <FaReact /> },
-      { nombre: "Postman", icono: <SiPostman /> },
-      { nombre: "Javascript", icono: <IoLogoJavascript /> }
+      { nombre: "Android", icono: <IoLogoAndroid /> },
+      { nombre: "PHP", icono: <FaPhp /> },
+      { nombre: "Firebase", icono: <IoLogoFirebase /> },
+      { nombre: "Google Cloud ", icono: <SiGooglecloud /> },
+      { nombre: "Java", icono: <FaJava /> },
     ]
   }
 ];

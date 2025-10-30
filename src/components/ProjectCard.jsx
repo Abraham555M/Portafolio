@@ -7,8 +7,6 @@ const ProjectCard = ({ imagen, imagen2, titulo, descipcion, enlace, tecnologias 
 
   return (
     <motion.div
-      whileHover={{ scale: 1.03, y: -6 }}
-      whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[380px] xl:max-w-[420px] 
                  h-[420px] sm:h-[440px] md:h-[460px] lg:h-[480px] 
@@ -54,7 +52,6 @@ const ProjectCard = ({ imagen, imagen2, titulo, descipcion, enlace, tecnologias 
         {/* Título + icono */}
         <div className="flex items-center mb-3 space-x-2">
           <motion.h1
-            whileHover={{ scale: 1.02 }}
             className="text-xl font-bold tracking-wide text-white transition-all duration-300 sm:text-2xl md:text-xl group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-green-300 group-hover:bg-clip-text"
           >
             {titulo}
