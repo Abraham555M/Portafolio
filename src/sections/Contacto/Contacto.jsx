@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { sociales } from "../../data/SocialData";
 import { FiSend, FiChevronRight } from "react-icons/fi";
 import { MdEmail } from "react-icons/md";
-import emailjs from "@emailjs/browser"; // 👈 Importa EmailJS
+import emailjs from "@emailjs/browser"; // Importa EmailJS
+import { NotificationModal } from "../../components/NotificationModal"; // Importa el modal
 
 export const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,9 @@ export const Contacto = () => {
   });
 
   const [isSending, setIsSending] = useState(false);
-  const [status, setStatus] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalType, setModalType] = useState("success");
+  const [modalMessage, setModalMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -25,35 +28,39 @@ export const Contacto = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSending(true);
-    setStatus("");
 
-    // 👇 Aquí se conecta con EmailJS
     emailjs
       .send(
-        "service_kbdp38t", // tu service ID
-        "template_5vz3sgq", // tu template ID
+        "service_kbdp38t",
+        "template_5vz3sgq",
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          title: "Nuevo mensaje de portafolio", // opcional, para {{title}} en tu template
+          title: "Nuevo mensaje de portafolio",
         },
-        "VX6N_LRDGKGhN4s4W" // Public Key desde EmailJS
+        "VX6N_LRDGKGhN4s4W"
       )
       .then(
         () => {
-          setStatus("✅ Mensaje enviado correctamente.");
+          // 👇 Muestra modal de éxito
+          setModalType("success");
+          setModalMessage("Thank you for reaching out! I'll get back to you soon.");
+          setModalOpen(true);
           setIsSending(false);
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
           console.error("Error:", error);
-          setStatus("❌ Error al enviar el mensaje. Intenta nuevamente.");
+          // 👇 Muestra modal de error
+          setModalType("error");
+          setModalMessage("Unable to send your message. Please try again or contact me directly.");
+          setModalOpen(true);
           setIsSending(false);
         }
       );
   };
-
+  
   // Animaciones
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -194,6 +201,13 @@ export const Contacto = () => {
           </motion.div>
         </div>
       </div>
+
+      <NotificationModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        type={modalType}
+        message={modalMessage}
+      />
     </section>
   );
 };
