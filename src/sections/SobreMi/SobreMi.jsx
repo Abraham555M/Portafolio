@@ -89,7 +89,7 @@ export const SobreMi = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="relative flex justify-center mx-auto mt-10 cursor-pointer lg:w-1/2 min-h-[25rem] sm:min-h-[24rem] md:min-h-[28rem] group"
+            className="relative flex justify-center mx-auto mt-10 cursor-pointer w-full lg:w-1/2 min-h-[20rem] sm:min-h-[22rem] md:min-h-[26rem] group overflow-visible"
             onClick={handleClick}
           >
             {/* Efecto de brillo de fondo */}
@@ -105,11 +105,18 @@ export const SobreMi = () => {
                   className="absolute overflow-hidden border shadow-2xl rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border-slate-700/50"
                   initial={false}
                   animate={{
+                    // 📱 En modo móvil -> pila centrada
                     opacity: isFront ? 1 : 0.7 - (relativeIndex * 0.1),
                     scale: isFront ? 1 : 0.9 - (relativeIndex * 0.05),
-                    rotate: isFront ? 6 : -6 - (relativeIndex * 2),
-                    x: isFront ? 0 : -60 - (relativeIndex * 10),
-                    y: isFront ? 0 : 70 + (relativeIndex * 10),
+                    rotate: window.innerWidth < 1024
+                      ? (-5 + relativeIndex * 5) // en móvil rotadas y centradas
+                      : (isFront ? 6 : -6 - (relativeIndex * 2)), // en escritorio se mantiene
+                    x: window.innerWidth < 1024
+                      ? 0 // centradas en móvil
+                      : (isFront ? 0 : -60 - (relativeIndex * 10)),
+                    y: window.innerWidth < 1024
+                      ? relativeIndex * 10 // escalonadas en pila
+                      : (isFront ? 0 : 70 + (relativeIndex * 10)),
                     zIndex: isFront ? 20 : 20 - relativeIndex
                   }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -128,7 +135,7 @@ export const SobreMi = () => {
               );
             })}
           </motion.div>
-
+          
           {/* Información con entrada desde la derecha */}
           <motion.div
             variants={contentVariants}

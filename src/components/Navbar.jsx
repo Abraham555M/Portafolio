@@ -30,7 +30,6 @@ export const Navbar = () => {
   };
 
   const scrollToSection = (section) => {
-    // Usamos requestAnimationFrame para medir después del render final
     requestAnimationFrame(() => {
       const navbarHeight = document.querySelector("header")?.offsetHeight || 80;
       const yOffset = -navbarHeight + 10;
@@ -42,11 +41,7 @@ export const Navbar = () => {
       });
     });
   };
-
-
-
-
-
+  
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
