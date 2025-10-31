@@ -51,3 +51,7 @@ html {
   background: linear-gradient(180deg, rgba(74,222,128,0.7), rgba(16,185,129,0.7));
 }
 
+
+html {
+  scroll-behavior: smooth;
+}

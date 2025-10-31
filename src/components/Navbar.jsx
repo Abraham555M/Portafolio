@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoMdDownload } from "react-icons/io";
 import logo from "../assets/logo_3.png";
-import { menuItems } from "../data/MenuItems"
+import { menuItems } from "../data/MenuItems";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +12,18 @@ export const Navbar = () => {
     link.href = "/src/assets/documentos/ABRAHAM MANUEL HILARIO FERNÁNDEZ.pdf";
     link.download = "CV_Abraham_Manuel_Hilario_Fernández.pdf";
     link.click();
+  };
+
+  // 🧭 Nueva función para hacer scroll suave a las secciones
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const yOffset = -80; // Ajusta según la altura de tu navbar
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+    setIsOpen(false); // Cierra el menú en móvil
   };
 
   return (
@@ -32,6 +43,7 @@ export const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="relative flex-shrink-0 cursor-pointer w-28 sm:w-32 md:w-36"
+            onClick={() => handleScroll("home")}
           >
             <div className="absolute inset-0 transition-all duration-500 rounded-lg bg-gradient-to-br from-green-500/0 to-green-500/0 blur-sm hover:from-green-500/20 hover:to-green-500/20"></div>
             <img
@@ -64,7 +76,11 @@ export const Navbar = () => {
                   stroke="currentColor"
                   strokeWidth={2}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </motion.svg>
               ) : (
                 <motion.svg
@@ -80,7 +96,11 @@ export const Navbar = () => {
                   stroke="currentColor"
                   strokeWidth={2}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m0 6H4" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16m0 6H4"
+                  />
                 </motion.svg>
               )}
             </AnimatePresence>
@@ -97,16 +117,17 @@ export const Navbar = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
                   <motion.a
-                    href={`#${item.id}`}
+                    onClick={() => handleScroll(item.id)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="relative px-3 py-2 transition-all duration-300 rounded-lg group whitespace-nowrap hover:text-green-400"
+                    className="relative px-3 py-2 transition-all duration-300 rounded-lg cursor-pointer group whitespace-nowrap hover:text-green-400"
                   >
-                    <span className="relative z-10">{item.label}</span>
+                  <span className="relative z-10 pointer-events-none">{item.label}</span>
                     <motion.div
                       className="absolute inset-0 rounded-lg bg-gradient-to-br from-slate-700/0 to-slate-700/0"
                       whileHover={{
-                        background: "linear-gradient(to bottom right, rgb(51 65 85 / 0.5), rgb(30 41 59 / 0.5))",
+                        background:
+                          "linear-gradient(to bottom right, rgb(51 65 85 / 0.5), rgb(30 41 59 / 0.5))",
                       }}
                       transition={{ duration: 0.3 }}
                     />
@@ -133,7 +154,14 @@ export const Navbar = () => {
             className="relative items-center flex-shrink-0 hidden gap-2 px-3 py-2 overflow-hidden transition-all duration-300 border cursor-pointer lg:flex group xl:gap-3 xl:px-4 2xl:px-5 rounded-xl bg-gradient-to-br from-slate-700/90 to-slate-800/90 border-slate-600/50 hover:border-green-500/60 whitespace-nowrap hover:shadow-green-500/30 hover:shadow-xl"
           >
             <div className="absolute top-0 right-0 w-16 h-16 transition-all duration-500 rounded-full bg-gradient-to-br from-green-400/0 to-transparent blur-xl group-hover:from-green-400/30"></div>
-            <IoMdDownload className="relative z-10 w-4 h-4 text-green-400 transition-all duration-300 xl:w-5 xl:h-5 group-hover:text-green-300 group-hover:animate-bounce" />
+            <motion.div
+              whileHover={{
+                y: [0, -6, 0], // sube y baja una vez
+                transition: { duration: 0.6, ease: "easeOut" },
+              }}
+            >
+              <IoMdDownload className="relative z-10 w-4 h-4 text-green-400 transition-all duration-300 xl:w-5 xl:h-5 group-hover:text-green-300" />
+            </motion.div>
             <span className="relative z-10 text-xs transition-colors duration-300 xl:text-sm 2xl:text-base group-hover:text-green-300">
               Download CV
             </span>
@@ -160,11 +188,10 @@ export const Navbar = () => {
                     transition={{ duration: 0.3, delay: i * 0.05 }}
                   >
                     <motion.a
-                      href={`#${item.id}`}
+                      onClick={() => handleScroll(item.id)}
                       whileHover={{ scale: 1.02, x: 4 }}
                       whileTap={{ scale: 0.98 }}
-                      className="relative block px-4 py-3 overflow-hidden transition-all duration-300 border rounded-xl group bg-slate-800/50 border-slate-700/50 hover:border-green-500/60 hover:bg-slate-700/50"
-                      onClick={() => setIsOpen(false)}
+                      className="relative block px-4 py-3 overflow-hidden transition-all duration-300 border cursor-pointer rounded-xl group bg-slate-800/50 border-slate-700/50 hover:border-green-500/60 hover:bg-slate-700/50"
                     >
                       <div className="absolute top-0 right-0 w-16 h-16 transition-all duration-500 rounded-full bg-gradient-to-br from-green-400/0 to-transparent blur-lg group-hover:from-green-400/20"></div>
                       <span className="relative z-10 transition-colors duration-300 group-hover:text-green-400">
