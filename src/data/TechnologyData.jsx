@@ -1,45 +1,52 @@
-import { FaCss3Alt, FaHtml5, FaJava, FaJs, FaLaravel, FaPhp, FaReact } from "react-icons/fa";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { DiJavascript } from "react-icons/di";
+import { FaBootstrap, FaCss3Alt, FaHtml5, FaJava, FaPhp, FaLaravel, FaReact } from "react-icons/fa";
 import { FaFigma } from "react-icons/fa6";
 import { GrMysql } from "react-icons/gr";
-import { IoLogoAndroid, IoLogoJavascript } from "react-icons/io";
+import { IoLogoAndroid } from "react-icons/io";
 import { IoLogoFirebase } from "react-icons/io5";
-import { LuCodeXml } from "react-icons/lu";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiGooglecloud, SiMysql, SiPostman, SiSpring, SiVite } from "react-icons/si";
+import { SiGooglecloud, SiPostman, SiSpring, SiVite } from "react-icons/si";
 
 export const proyectos = [
   {
-    imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
-    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
-    titulo: "Mi Proyecto Laravel + React",
-    descipcion: "Un sistema de pedidos en tiempo real.",
+    imagen: "https://i.ibb.co/kVRzK4gD/Captura-de-pantalla-2025-10-30-232822.png",
+    imagen2: "https://i.ibb.co/SDrkxvMq/Captura-de-pantalla-2025-10-30-232944.png",
+    titulo: "Business Web Administrative System",
+    descripcion:
+      "Development of an integrated web system aimed at optimizing the company’s administrative management. It enables efficient management of staff, control of technological resources, client information, and user role assignment based on access levels. Its design improves internal processes, enhances organization, and facilitates decision-making through an intuitive and functional interface.",
     enlace: "https://github.com/mi-proyecto",
     tecnologias: [
       { nombre: "Laravel", icono: <FaLaravel /> },
-      { nombre: "React", icono: <FaReact /> },
-      { nombre: "MySQL", icono: <SiMysql /> }
-    ]
+      { nombre: "JavaScript", icono: <DiJavascript /> },
+      { nombre: "PostgreSQL", icono: <BiLogoPostgresql /> },
+      { nombre: "HTML", icono: <FaHtml5 /> },
+      { nombre: "Bootstrap", icono: <FaBootstrap /> },
+      { nombre: "CSS", icono: <FaCss3Alt /> },
+    ],
   },
   {
     imagen: "https://i.ibb.co/35KfW128/Captura-de-pantalla-2025-10-30-122744.png",
     imagen2: "https://i.ibb.co/ycZq8xRR/Captura-de-pantalla-2025-10-30-122912.png",
-    titulo: "Plataforma administrativa del albergue San Francisco",
-    descipcion: "Un sistema web diseñado para optimizar la administración de un albergue, permitiendo gestionar de manera eficiente los registros de animales, adopciones, personal y recursos, todo desde una interfaz centralizada y fácil de usar.",
+    titulo: "San Francisco Shelter Management Platform",
+    descripcion:
+      "A web system designed to optimize the management of an animal shelter, allowing efficient control of animal records, adoptions, staff, and resources — all from a centralized and user-friendly interface.",
     enlace: "https://github.com/Abraham555M/frontend_adprso.git",
     tecnologias: [
       { nombre: "React", icono: <FaReact /> },
       { nombre: "Spring Boot", icono: <SiSpring /> },
       { nombre: "MySQL", icono: <GrMysql /> },
-      { nombre: "Tailwind", icono: <RiTailwindCssFill /> },
+      { nombre: "Tailwind CSS", icono: <RiTailwindCssFill /> },
       { nombre: "Figma", icono: <FaFigma /> },
-      { nombre: "Vite", icono: <SiVite /> }
-    ]
+      { nombre: "Vite", icono: <SiVite /> },
+    ],
   },
   {
     imagen: "https://i.ibb.co/nMDkkCMM/Captura-de-pantalla-2025-10-30-111323.png",
     imagen2: "https://i.ibb.co/4np7LDCP/Captura-de-pantalla-2025-10-30-111457.png",
-    titulo: "Aplicación móvil para la gestión de gastos personales" ,
-    descipcion: "Aplicación móvil diseñada para facilitar la gestión y control de los gastos personales, permitiendo al usuario registrar sus movimientos financieros, analizar sus hábitos de consumo y optimizar la administración de sus recursos económicos de forma sencilla e intuitiva.",
+    titulo: "Mobile App for Personal Expense Management",
+    descripcion:
+      "A mobile application designed to help users easily manage and track their personal expenses. It allows users to record financial movements, analyze spending habits, and optimize financial management in a simple and intuitive way.",
     enlace: "https://github.com/Manuelh2004/PHP_PROYECTO_MOVILES.git",
     tecnologias: [
       { nombre: "Android", icono: <IoLogoAndroid /> },
@@ -47,33 +54,34 @@ export const proyectos = [
       { nombre: "Firebase", icono: <IoLogoFirebase /> },
       { nombre: "MySQL", icono: <GrMysql /> },
       { nombre: "Java", icono: <FaJava /> },
-    ]
+    ],
   },
   {
-    imagen: "https://creasystem.net/assets/uploads/media-uploader/dns1663876488.png",
-    imagen2: "https://www.creasystem.net/assets/uploads/media-uploader/aplicacion-web-y-de-escritorio-011663869647.jpg",
-    titulo: "Marcado de Asistencia",
-    descipcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    enlace: "https://github.com/otro-proyecto",
+    imagen: "https://i.ibb.co/GXSNrZM/Captura-de-pantalla-2025-10-30-230435.png",
+    imagen2: "https://i.ibb.co/vxXS0QRj/Captura-de-pantalla-2025-10-30-230639.png",
+    titulo: "Backend for Attendance Tracking System",
+    descripcion:
+      "Backend development responsible for managing employee attendance records, monitoring, and control. It includes functionalities such as user authentication, attendance data storage, and report generation, ensuring efficiency, security, and scalability in handling work-related information.",
+    enlace: "https://github.com/Abraham555M/backend_sistema_control_asistencia.git",
     tecnologias: [
       { nombre: "Laravel", icono: <FaLaravel /> },
-      { nombre: "React", icono: <FaReact /> },
-      { nombre: "Tailwind", icono: <RiTailwindCssFill /> }
-   
-    ]
+      { nombre: "PHP", icono: <FaPhp /> },
+      { nombre: "Postman", icono: <SiPostman /> },
+    ],
   },
   {
     imagen: "https://i.ibb.co/LDPcP8kB/Captura-de-pantalla-2025-10-30-171058.png",
     imagen2: "https://i.ibb.co/NdszVjyR/Captura-de-pantalla-2025-10-30-171218.png",
-    titulo: "Aplicación móvil para la gestión de pedidos",
-    descipcion: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    titulo: "Mobile App for Order Management",
+    descripcion:
+      "A mobile application created to streamline the management of customer orders, allowing businesses to track requests, manage deliveries, and improve communication with clients. It leverages cloud services and real-time synchronization for efficient operation.",
     enlace: "https://github.com/Abraham555M/ProyectoLaGranja.git",
     tecnologias: [
       { nombre: "Android", icono: <IoLogoAndroid /> },
       { nombre: "PHP", icono: <FaPhp /> },
       { nombre: "Firebase", icono: <IoLogoFirebase /> },
-      { nombre: "Google Cloud ", icono: <SiGooglecloud /> },
+      { nombre: "Google Cloud", icono: <SiGooglecloud /> },
       { nombre: "Java", icono: <FaJava /> },
-    ]
-  }
+    ],
+  },
 ];

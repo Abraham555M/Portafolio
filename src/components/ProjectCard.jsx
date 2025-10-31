@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaUpRightFromSquare } from "react-icons/fa6";
 
-const ProjectCard = ({ imagen, imagen2, titulo, descipcion, enlace, tecnologias }) => {
+const ProjectCard = ({ imagen, imagen2, titulo, descripcion, enlace, tecnologias }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -73,7 +73,7 @@ const ProjectCard = ({ imagen, imagen2, titulo, descipcion, enlace, tecnologias 
 
         {/* Descripción */}
         <p className="mb-4 text-sm leading-relaxed text-gray-400 transition-colors duration-300 sm:text-base group-hover:text-slate-200">
-          {descipcion}
+          {descripcion}
         </p>
 
         {/* Tecnologías */}

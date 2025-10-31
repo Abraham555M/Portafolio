@@ -101,7 +101,7 @@ export const Proyectos = () => {
               imagen={proyecto.imagen}
               imagen2={proyecto.imagen2}
               titulo={proyecto.titulo}
-              descipcion={proyecto.descipcion}
+              descripcion={proyecto.descripcion}
               enlace={proyecto.enlace}
               tecnologias={proyecto.tecnologias}
             />
