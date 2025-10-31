@@ -14,17 +14,38 @@ export const Navbar = () => {
     link.click();
   };
 
-  // 🧭 Nueva función para hacer scroll suave a las secciones
+  // Nueva función para hacer scroll suave a las secciones
   const handleScroll = (id) => {
     const section = document.getElementById(id);
-    if (section) {
-      const yOffset = -80; // Ajusta según la altura de tu navbar
-      const y =
-        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
+    if (!section) return;
+
+    // Si el menú móvil está abierto, lo cerramos primero
+    if (isOpen) {
+      setIsOpen(false);
+      // Espera a que termine la animación del cierre antes de hacer scroll
+      setTimeout(() => scrollToSection(section), 350);
+    } else {
+      scrollToSection(section);
     }
-    setIsOpen(false); // Cierra el menú en móvil
   };
+
+  const scrollToSection = (section) => {
+    // Usamos requestAnimationFrame para medir después del render final
+    requestAnimationFrame(() => {
+      const navbarHeight = document.querySelector("header")?.offsetHeight || 80;
+      const yOffset = -navbarHeight + 10;
+      const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    });
+  };
+
+
+
+
 
   return (
     <motion.header
