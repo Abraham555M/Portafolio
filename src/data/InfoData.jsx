@@ -5,7 +5,7 @@ export const infos = [
     {
         id: 1,
         val: "",
-        label: "Name: Abraham Hilario Fernández",
+        label: "Name: Abraham Hilario Fernandez",
         icon: <FaUser />
     },
     {

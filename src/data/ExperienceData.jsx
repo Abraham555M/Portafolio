@@ -5,7 +5,7 @@ export const experiences = [
         "cargo": "Android Developer", 
         "fechaIni": "Aug. 2025",
         "fechaFin": "Oct. 2025",
-        "descripcion": "Led the backend development of a ticket management system using Laravel, applying clean architecture and building RESTful APIs integrated with Angular. Implemented automated testing with Postman and PHPUnit, achieving over 90% code coverage."
+        "descripcion": "Developed and optimized an Android application integrated with a PHP-based backend, enabling real-time data synchronization with the database. Applied MVC architecture and clean code principles to ensure scalability and maintainability. Implemented secure API consumption and efficient data handling, improving app performance by 35% and reducing response latency by 25%."
     },
     {
         "id": 2, 
@@ -13,9 +13,9 @@ export const experiences = [
         "cargo": "Freelance Web Developer", 
         "fechaIni": "May 2025",
         "fechaFin": "Jul. 2025",
-        "descripcion": "Designed interactive interfaces using Figma, applying UI/UX principles, Design Thinking, and usability heuristics. Developed a complete web system for a restaurant with Spring Boot, following clean architecture and SOLID principles. Deployed the system on Google Cloud using Docker, ensuring efficiency and scalability."
+        "descripcion": "Developed a complete web system for a dog shelter using Spring Boot, designed to manage adoptions, donations, and volunteer registrations efficiently. Applied clean architecture and SOLID principles to ensure scalability and maintainability. Designed intuitive interfaces in Figma following UX/UI best practices and deployed the system on Google Cloud with Docker, achieving 99.9% uptime and high performance under concurrent user loads."
     },
-    {
+        {
         "id": 3, 
         "empresa": "Devdatep Consulting",
         "puestos": [
@@ -23,13 +23,13 @@ export const experiences = [
                 "cargo": "Backend Development Lead",
                 "fechaIni": "Dec. 2024",
                 "fechaFin": "Feb. 2025",
-                "descripcion": "Temporary description for now"
+                "descripcion": "I was in charge of the backend area, holding coordination meetings with different development teams such as frontend and database. I led the backend department and trained new members joining the team, providing guidance on workflow and explaining the development methodology."
             },
             {
                 "cargo": "Backend Developer",
                 "fechaIni": "Oct. 2024",
                 "fechaFin": "Nov. 2024",
-                "descripcion": "Temporary description for now"
+                "descripcion": "Developed multiple backend endpoints later consumed by the frontend team. Implemented functionalities such as email sending, CRUD operations, and management of different tables including events and tickets, ensuring proper integration and performance across modules."
             }
         ]
     },

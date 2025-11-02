@@ -17,7 +17,7 @@ export const stats = [
   },
   { 
     id: 3, 
-    otherlabel: "3 Projects", 
+    otherlabel: "5 Projects", 
     label: "Total Projects", 
     icon: <AiOutlineFundProjectionScreen className="mb-1 text-2xl" /> 
   },

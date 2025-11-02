@@ -16,7 +16,7 @@ export const Inicio = () => {
   return (
     <section
       id="home"
-      className="p-6 text-white md:p-20"
+      className="p-6 text-white pt-28 md:pt-32 lg:pt-30"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col-reverse items-center justify-center w-full min-h-[75vh] py-10 md:py-16 lg:flex-row lg:justify-between lg:items-center lg:gap-10">  
         {/* Contenido izquierdo */}
@@ -133,21 +133,16 @@ export const Inicio = () => {
           <IconosInicio angle={0} duration={10}>
             <FaReact />
           </IconosInicio>
-
           <IconosInicio angle={120} duration={14}>
             <FaLaravel />
           </IconosInicio>
-
           <IconosInicio angle={240} duration={18}>
             <FaAndroid />
           </IconosInicio>
-
           <IconosInicio angle={300} duration={22}>
             <SiMysql />
           </IconosInicio>
-
         </motion.div>
-
       </div>
     </section>
   );
