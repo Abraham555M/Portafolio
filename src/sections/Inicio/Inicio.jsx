@@ -4,7 +4,7 @@ import { SiMysql } from "react-icons/si";
 import TypedText from "../../components/TypedText";
 import { MdWavingHand } from "react-icons/md";
 import { stats } from "../../data/StatsData";
-import foto from "../../assets/usuario.jpg";
+import foto from "../../assets/fotoPerfil.jpg";
 import { IconosInicio } from "../../components/IconosInicio";
 
 export const Inicio = () => {
@@ -123,21 +123,29 @@ export const Inicio = () => {
           }}
         >
           <div className="z-10 w-64 h-64 overflow-hidden border-4 border-white rounded-full shadow-lg sm:w-72 sm:h-72 lg:w-80 lg:h-80">
-            <img src={foto} alt="Mi foto" className="object-cover w-full h-full" />
+            <img 
+            src={foto} 
+            alt="Mi foto" 
+            className="object-cover w-full h-full scale-100" 
+          />
           </div>
 
-          <IconosInicio angle={0} duration={12}>
-            <FaReact className="text-xl text-black sm:text-2xl" />
+          <IconosInicio angle={0} duration={10}>
+            <FaReact />
           </IconosInicio>
-          <IconosInicio angle={120} duration={15}>
-            <FaLaravel className="text-xl text-black sm:text-2xl" />
+
+          <IconosInicio angle={120} duration={14}>
+            <FaLaravel />
           </IconosInicio>
+
           <IconosInicio angle={240} duration={18}>
-            <FaAndroid className="text-xl text-black sm:text-2xl" />
+            <FaAndroid />
           </IconosInicio>
-          <IconosInicio angle={300} duration={20}>
-            <SiMysql className="text-xl text-black sm:text-2xl" />
+
+          <IconosInicio angle={300} duration={22}>
+            <SiMysql />
           </IconosInicio>
+
         </motion.div>
 
       </div>

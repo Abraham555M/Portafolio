@@ -39,19 +39,21 @@ export const skills = [
   { id: 8, tipo: 2, nombre: "TypeScript", icono: <SiTypescript /> },
   { id: 9, tipo: 2, nombre: "React", icono: <FaReact /> },
 
-  // 🗄️ Databases
-  { id: 10, tipo: 3, nombre: "MySQL", icono: <GrMysql /> },
-  { id: 11, tipo: 3, nombre: "PostgreSQL", icono: <DiPostgresql /> },
-  { id: 12, tipo: 3, nombre: "MongoDB", icono: <SiMongodb /> },
-  { id: 13, tipo: 3, nombre: "Firebase", icono: <IoLogoFirebase /> },
+  // 🗄️ Mobile
+  { id: 10, tipo: 3, nombre: "Android", icono: <FaAndroid /> },
+
+  // Databases
+  { id: 11, tipo: 4, nombre: "MySQL", icono: <GrMysql /> },
+  { id: 12, tipo: 4, nombre: "PostgreSQL", icono: <DiPostgresql /> },
+  { id: 13, tipo: 4, nombre: "MongoDB", icono: <SiMongodb /> },
+  { id: 14, tipo: 4, nombre: "Firebase", icono: <IoLogoFirebase /> },
 
   // ☁️ Tools / Cloud
-  { id: 14, tipo: 4, nombre: "Google Cloud", icono: <SiGooglecloud /> },
-  { id: 15, tipo: 4, nombre: "Docker", icono: <FaDocker /> },
-  { id: 16, tipo: 4, nombre: "VirtualBox", icono: <SiVirtualbox /> },
-  { id: 17, tipo: 4, nombre: "Figma", icono: <FaFigma /> },
+  { id: 15, tipo: 5, nombre: "Google Cloud", icono: <SiGooglecloud /> },
+  { id: 16, tipo: 5, nombre: "Docker", icono: <FaDocker /> },
+  { id: 17, tipo: 5, nombre: "VirtualBox", icono: <SiVirtualbox /> },
+  { id: 18, tipo: 5, nombre: "Figma", icono: <FaFigma /> },
 
   // 📱 Mobile Development
-  { id: 18, tipo: 5, nombre: "Android", icono: <FaAndroid /> },
-  { id: 19, tipo: 5, nombre: "React Native", icono: <TbBrandReactNative /> },
+  { id: 19, tipo: 6, nombre: "React Native", icono: <TbBrandReactNative /> },
 ];
