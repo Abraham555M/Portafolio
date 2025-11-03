@@ -15,7 +15,7 @@ export const proyectos = [
     titulo: "Business Web Administrative System",
     descripcion:
       "Development of an integrated web system aimed at optimizing the company’s administrative management. It enables efficient management of staff, control of technological resources, client information, and user role assignment based on access levels. Its design improves internal processes, enhances organization, and facilitates decision-making through an intuitive and functional interface.",
-    enlace: "https://github.com/mi-proyecto",
+    enlace: "https://github.com/Abraham555M/software_wb4.git",
     tecnologias: [
       { nombre: "Laravel", icono: <FaLaravel /> },
       { nombre: "JavaScript", icono: <DiJavascript /> },
