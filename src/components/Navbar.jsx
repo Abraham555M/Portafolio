@@ -9,10 +9,11 @@ export const Navbar = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/src/assets/documentos/ABRAHAM MANUEL HILARIO FERNÁNDEZ.pdf";
-    link.download = "CV_Abraham_Manuel_Hilario_Fernández.pdf";
+    link.href = `${import.meta.env.BASE_URL}CV_Abraham_Manuel_Hilario_Fernandez.pdf`;
+    link.download = "CV_Abraham_Manuel_Hilario_Fernandez.pdf";
     link.click();
   };
+
 
   // Nueva función para hacer scroll suave a las secciones
   const handleScroll = (id) => {
